@@ -1,0 +1,182 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Festival BabyFútbol Colanta 2025" currentPage="home">
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-primary-600 via-primary-500 to-secondary-600 text-white overflow-hidden">
+    <div class="absolute inset-0 bg-black opacity-40"></div>
+    <div class="absolute inset-0 bg-[url('https://images.pexels.com/photos/114296/pexels-photo-114296.jpeg?auto=compress&cs=tinysrgb&w=1920')] bg-cover bg-center mix-blend-overlay"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 py-24 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <img src="/la cruz copia.webp" alt="Logo Festival BabyFútbol" class="mx-auto h-32 w-auto mb-8">
+        <h1 class="text-4xl md:text-6xl font-display font-bold mb-6 leading-tight">
+          Festival BabyFútbol<br>
+          <span class="text-orange-300">Colanta 2025</span>
+        </h1>
+        <p class="text-xl md:text-2xl mb-4 text-gray-200">
+          Zonal Masculino Sur Occidente de Colombia
+        </p>
+        <p class="text-lg mb-8 text-gray-300">
+          La Cruz, Nariño • 19 al 28 de Septiembre de 2025
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/programacion" class="inline-flex items-center px-8 py-3 bg-white text-primary-600 font-semibold rounded-xl shadow-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105">
+            Ver Programación
+          </a>
+          <a href="/tablas" class="inline-flex items-center px-8 py-3 bg-primary-800 text-white font-semibold rounded-xl shadow-lg hover:bg-primary-900 transition-all duration-300 hover:scale-105">
+            Tablas de Posiciones
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Info Cards Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Categoría -->
+        <div class="bg-white rounded-2xl shadow-neomorphism p-6 text-center hover:shadow-lg transition-shadow duration-300">
+          <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"></path>
+            </svg>
+          </div>
+          <h3 class="font-display font-bold text-lg mb-2">Categoría</h3>
+          <p class="text-gray-600">2013-2014</p>
+        </div>
+
+        <!-- Equipos -->
+        <div class="bg-white rounded-2xl shadow-neomorphism p-6 text-center hover:shadow-lg transition-shadow duration-300">
+          <div class="w-16 h-16 bg-success-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-success-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+          </div>
+          <h3 class="font-display font-bold text-lg mb-2">Equipos</h3>
+          <p class="text-gray-600">25 Participantes</p>
+        </div>
+
+        <!-- Sede -->
+        <div class="bg-white rounded-2xl shadow-neomorphism p-6 text-center hover:shadow-lg transition-shadow duration-300">
+          <div class="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+          </div>
+          <h3 class="font-display font-bold text-lg mb-2">Sede</h3>
+          <p class="text-gray-600">Estadio Municipal<br>Fenelón Ordóñez</p>
+        </div>
+
+        <!-- Premio -->
+        <div class="bg-white rounded-2xl shadow-neomorphism p-6 text-center hover:shadow-lg transition-shadow duration-300">
+          <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+            </svg>
+          </div>
+          <h3 class="font-display font-bold text-lg mb-2">Clasificación</h3>
+          <p class="text-gray-600">Final Internacional<br>Medellín 2026</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Próximos Partidos -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">
+          Próximos Partidos
+        </h2>
+        <p class="text-xl text-gray-600">
+          No te pierdas la acción del festival
+        </p>
+      </div>
+
+      <div id="upcoming-matches" class="grid gap-6">
+        <!-- Los partidos se cargarán dinámicamente -->
+      </div>
+
+      <div class="text-center mt-8">
+        <a href="/programacion" class="inline-flex items-center px-6 py-3 bg-primary-600 text-white font-semibold rounded-xl hover:bg-primary-700 transition-colors">
+          Ver Programación Completa
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-r from-primary-600 to-secondary-600 text-white">
+    <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl md:text-4xl font-display font-bold mb-6">
+        ¡Sigue toda la acción del torneo!
+      </h2>
+      <p class="text-xl mb-8 text-gray-200">
+        Mantente actualizado con resultados, galerías de fotos y más
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/galerias" class="inline-flex items-center px-8 py-3 bg-white text-primary-600 font-semibold rounded-xl hover:bg-gray-100 transition-colors">
+          Ver Galerías
+        </a>
+        <a href="/goleadores" class="inline-flex items-center px-8 py-3 bg-primary-800 text-white font-semibold rounded-xl hover:bg-primary-900 transition-colors">
+          Tabla de Goleadores
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    try {
+      const response = await fetch('/data/matches.json');
+      const data = await response.json();
+      
+      // Obtener los próximos 3 partidos
+      const upcomingMatches = data.matches.slice(0, 2);
+      
+      const container = document.getElementById('upcoming-matches');
+      if (container && upcomingMatches.length > 0) {
+        container.innerHTML = upcomingMatches.map(matchDay => `
+          <div class="bg-gray-50 rounded-2xl p-6">
+            <div class="text-center mb-4">
+              <h3 class="text-xl font-display font-bold text-gray-900">${new Date(matchDay.date).toLocaleDateString('es-CO', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</h3>
+              <p class="text-gray-600">${matchDay.venue}</p>
+            </div>
+            <div class="space-y-4">
+              ${matchDay.games.slice(0, 3).map(game => `
+                <div class="flex items-center justify-between bg-white rounded-lg p-4 shadow-sm">
+                  <div class="flex-1 text-center">
+                    <p class="font-semibold text-gray-900">${game.homeTeam}</p>
+                  </div>
+                  <div class="px-4">
+                    <div class="text-center">
+                      <span class="text-sm text-gray-500">${game.time}</span>
+                      <div class="text-lg font-bold text-primary-600">VS</div>
+                      <span class="text-xs bg-${game.group === 'A' ? 'red' : game.group === 'B' ? 'blue' : game.group === 'C' ? 'green' : game.group === 'D' ? 'yellow' : game.group === 'E' ? 'purple' : 'pink'}-100 text-${game.group === 'A' ? 'red' : game.group === 'B' ? 'blue' : game.group === 'C' ? 'green' : game.group === 'D' ? 'yellow' : game.group === 'E' ? 'purple' : 'pink'}-800 px-2 py-1 rounded-full">Grupo ${game.group}</span>
+                    </div>
+                  </div>
+                  <div class="flex-1 text-center">
+                    <p class="font-semibold text-gray-900">${game.awayTeam}</p>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `).join('');
+      }
+    } catch (error) {
+      console.error('Error loading matches:', error);
+    }
+  });
+</script>
+</BaseLayout>

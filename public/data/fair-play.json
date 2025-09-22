@@ -1,0 +1,39 @@
+{
+  "fairPlay": [
+    {
+      "position": 1,
+      "team": "ALDRIN F.C. Tumaco",
+      "yellowCards": 2,
+      "redCards": 0,
+      "points": 18
+    },
+    {
+      "position": 2,
+      "team": "Club Real Madrid de Tumaco",
+      "yellowCards": 3,
+      "redCards": 0,
+      "points": 17
+    },
+    {
+      "position": 3,
+      "team": "Calidad F.C. Pitalito",
+      "yellowCards": 4,
+      "redCards": 0,
+      "points": 16
+    },
+    {
+      "position": 4,
+      "team": "Real Sociedad F.C. Popayán",
+      "yellowCards": 5,
+      "redCards": 1,
+      "points": 10
+    },
+    {
+      "position": 5,
+      "team": "C.D. Camilo Torres de Popayán",
+      "yellowCards": 6,
+      "redCards": 1,
+      "points": 9
+    }
+  ]
+}

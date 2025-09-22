@@ -1,0 +1,59 @@
+{
+  "groups": [
+    {
+      "name": "GRUPO A",
+      "teams": [
+        { "id": 1, "name": "Club Real Madrid de Tumaco" },
+        { "id": 2, "name": "C.D. Sport Center Putumayo" },
+        { "id": 3, "name": "C.D. Camilo Torres de Popayán" },
+        { "id": 4, "name": "JAC. La Rioja Neiva" }
+      ]
+    },
+    {
+      "name": "GRUPO B", 
+      "teams": [
+        { "id": 5, "name": "ALDRIN F.C. Tumaco" },
+        { "id": 6, "name": "C.D. León F.C. de Popayán" },
+        { "id": 7, "name": "Calidad F.C. Pitalito" },
+        { "id": 8, "name": "Academia de fútbol Pumas de Mocoa" }
+      ]
+    },
+    {
+      "name": "GRUPO C",
+      "teams": [
+        { "id": 9, "name": "Estudiantes F.C. Pasto" },
+        { "id": 10, "name": "C.D. Sport Cauca Popayán" },
+        { "id": 11, "name": "CSD Aston Huila Neiva" },
+        { "id": 12, "name": "Tierra de Talentos Puerto Asís" }
+      ]
+    },
+    {
+      "name": "GRUPO D",
+      "teams": [
+        { "id": 13, "name": "Deportivo Pasto" },
+        { "id": 14, "name": "Deportivo Caucanos Popayán" },
+        { "id": 15, "name": "Promesas F.C. Neiva" },
+        { "id": 16, "name": "Club Nuevos Talentos Orito" }
+      ]
+    },
+    {
+      "name": "GRUPO E",
+      "teams": [
+        { "id": 17, "name": "RADI F.C. Ipiales" },
+        { "id": 18, "name": "Elite Independiente Popayán" },
+        { "id": 19, "name": "La Plata F.C. M. La Plata" },
+        { "id": 20, "name": "Atlético F.C. Florencia" }
+      ]
+    },
+    {
+      "name": "GRUPO F",
+      "teams": [
+        { "id": 21, "name": "FM de fútbol La Cruz Nariño" },
+        { "id": 22, "name": "Club Eder Rúales de Ipiales" },
+        { "id": 23, "name": "Real Sociedad F.C. Popayán" },
+        { "id": 24, "name": "Club D. Reyes F.C. de Neiva" },
+        { "id": 25, "name": "Sporting Caquetá" }
+      ]
+    }
+  ]
+}

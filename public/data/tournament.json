@@ -1,0 +1,36 @@
+{
+  "name": "Festival de Fútbol BabyFútbol Colanta",
+  "subtitle": "Zonal Masculino Sur Occidente de Colombia",
+  "location": "La Cruz, Nariño",
+  "venue": "Estadio Municipal Fenelón Ordóñez",
+  "dates": {
+    "start": "2025-09-19",
+    "end": "2025-09-28"
+  },
+  "category": "2013-2014",
+  "description": "Clasificatoria a la Final Internacional Medellín, Enero de 2026",
+  "organizer": "Corporación Deportiva Los Paisitas",
+  "contact": {
+    "email": "cdlpaisitas@gmail.com",
+    "phone": "(604) 2602853",
+    "whatsapp": "311 7736767",
+    "website": "www.festivaldefestivales.com"
+  },
+  "sponsors": [
+    {
+      "name": "Colanta",
+      "logo": "/images/sponsors/colanta.png",
+      "url": "https://colanta.com.co"
+    },
+    {
+      "name": "Alcaldía de La Cruz",
+      "logo": "/images/sponsors/alcaldia-lacruz.png",
+      "url": "#"
+    },
+    {
+      "name": "Gobernación de Nariño",
+      "logo": "/images/sponsors/gobernacion-narino.png",
+      "url": "#"
+    }
+  ]
+}

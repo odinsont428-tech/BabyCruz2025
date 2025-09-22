@@ -1,0 +1,95 @@
+---
+interface Props {
+  currentPage?: string;
+}
+const { currentPage } = Astro.props;
+---
+
+<nav class="bg-white shadow-neomorphism-sm sticky top-0 z-50 border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <img src="/la cruz copia.webp" alt="Logo Torneo" class="h-12 w-auto">
+        <div class="hidden sm:block">
+          <h1 class="text-lg font-display font-bold text-primary-600">BabyFútbol Colanta</h1>
+          <p class="text-xs text-gray-500">La Cruz, Nariño 2025</p>
+        </div>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="/" class={`nav-link ${currentPage === 'home' ? 'active' : ''}`}>
+          Inicio
+        </a>
+        <a href="/programacion" class={`nav-link ${currentPage === 'programacion' ? 'active' : ''}`}>
+          Programación
+        </a>
+        <a href="/tablas" class={`nav-link ${currentPage === 'tablas' ? 'active' : ''}`}>
+          Tablas
+        </a>
+        <a href="/goleadores" class={`nav-link ${currentPage === 'goleadores' ? 'active' : ''}`}>
+          Goleadores
+        </a>
+        <a href="/fair-play" class={`nav-link ${currentPage === 'fair-play' ? 'active' : ''}`}>
+          Juego Limpio
+        </a>
+        <a href="/galerias" class={`nav-link ${currentPage === 'galerias' ? 'active' : ''}`}>
+          Galerías
+        </a>
+        <a href="/agradecimientos" class={`nav-link ${currentPage === 'agradecimientos' ? 'active' : ''}`}>
+          Agradecimientos
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button id="mobile-menu-button" type="button" class="p-2 rounded-lg text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500">
+          <span class="sr-only">Abrir menú principal</span>
+          <svg id="menu-icon" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="close-icon" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="hidden md:hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+        <a href="/" class={`mobile-nav-link ${currentPage === 'home' ? 'active' : ''}`}>Inicio</a>
+        <a href="/programacion" class={`mobile-nav-link ${currentPage === 'programacion' ? 'active' : ''}`}>Programación</a>
+        <a href="/tablas" class={`mobile-nav-link ${currentPage === 'tablas' ? 'active' : ''}`}>Tablas</a>
+        <a href="/goleadores" class={`mobile-nav-link ${currentPage === 'goleadores' ? 'active' : ''}`}>Goleadores</a>
+        <a href="/fair-play" class={`mobile-nav-link ${currentPage === 'fair-play' ? 'active' : ''}`}>Juego Limpio</a>
+        <a href="/galerias" class={`mobile-nav-link ${currentPage === 'galerias' ? 'active' : ''}`}>Galerías</a>
+        <a href="/agradecimientos" class={`mobile-nav-link ${currentPage === 'agradecimientos' ? 'active' : ''}`}>Agradecimientos</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    mobileMenuButton?.addEventListener('click', () => {
+      const isHidden = mobileMenu?.classList.contains('hidden');
+      
+      if (isHidden) {
+        mobileMenu?.classList.remove('hidden');
+        menuIcon?.classList.add('hidden');
+        closeIcon?.classList.remove('hidden');
+      } else {
+        mobileMenu?.classList.add('hidden');
+        menuIcon?.classList.remove('hidden');
+        closeIcon?.classList.add('hidden');
+      }
+    });
+  });
+</script>

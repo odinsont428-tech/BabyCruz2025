@@ -1,0 +1,82 @@
+{
+  "matches": [
+    {
+      "date": "2025-09-19",
+      "venue": "Estadio Municipal Fenelón Ordóñez",
+      "games": [
+        {
+          "time": "17:00",
+          "homeTeam": "Club Eder Rúales de Ipiales",
+          "awayTeam": "Sporting Caquetá",
+          "group": "F"
+        },
+        {
+          "time": "18:15",
+          "homeTeam": "Real Sociedad F.C. Popayán",
+          "awayTeam": "Club D. Reyes F.C. de Neiva",
+          "group": "F"
+        },
+        {
+          "time": "19:30",
+          "homeTeam": "Club Real Madrid de Tumaco",
+          "awayTeam": "C.D. Sport Center Putumayo",
+          "group": "A"
+        }
+      ]
+    },
+    {
+      "date": "2025-09-20",
+      "venue": "Estadio Municipal Fenelón Ordóñez",
+      "games": [
+        {
+          "time": "08:00",
+          "homeTeam": "Deportivo Pasto",
+          "awayTeam": "Deportivo Caucanos Popayán",
+          "group": "D"
+        },
+        {
+          "time": "09:15",
+          "homeTeam": "Promesas F.C. Neiva",
+          "awayTeam": "Club Nuevos Talentos Orito",
+          "group": "D"
+        },
+        {
+          "time": "10:30",
+          "homeTeam": "Calidad F.C. Pitalito",
+          "awayTeam": "Academia de fútbol Pumas de Mocoa",
+          "group": "B"
+        },
+        {
+          "time": "11:45",
+          "homeTeam": "C.D. Camilo Torres de Popayán",
+          "awayTeam": "JAC. La Rioja Neiva",
+          "group": "A"
+        },
+        {
+          "time": "13:00",
+          "homeTeam": "ALDRIN F.C. Tumaco",
+          "awayTeam": "C.D. León F.C. de Popayán",
+          "group": "B"
+        },
+        {
+          "time": "14:15",
+          "homeTeam": "La Plata F.C. M. La Plata",
+          "awayTeam": "Atlético F.C. Florencia",
+          "group": "E"
+        },
+        {
+          "time": "15:30",
+          "homeTeam": "Real Sociedad F.C. Popayán",
+          "awayTeam": "Sporting Caquetá",
+          "group": "F"
+        },
+        {
+          "time": "16:45",
+          "homeTeam": "FM de fútbol La Cruz Nariño",
+          "awayTeam": "Club Eder Rúales de Ipiales",
+          "group": "F"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Tabla de Goleadores - Festival BabyFútbol Colanta 2025" currentPage="goleadores">
+  <div class="py-8 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-4">
+          Tabla de Goleadores
+        </h1>
+        <p class="text-xl text-gray-600">
+          Los máximos artilleros del Festival BabyFútbol Colanta 2025
+        </p>
+      </div>
+
+      <!-- Scorers Table -->
+      <div class="bg-white rounded-2xl shadow-neomorphism overflow-hidden">
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white p-6">
+          <h2 class="text-2xl font-display font-bold flex items-center">
+            <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+            </svg>
+            Máximos Goleadores
+          </h2>
+        </div>
+
+        <!-- Table -->
+        <div class="overflow-x-auto">
+          <table class="w-full" id="scorers-table">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Posición</th>
+                <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Jugador</th>
+                <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Equipo</th>
+                <th class="px-6 py-4 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Goles</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200" id="scorers-tbody">
+              <!-- Los datos se cargarán aquí -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8" id="stats-cards">
+        <!-- Las estadísticas se cargarán aquí -->
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    try {
+      const response = await fetch('/data/scorers.json');
+      const data = await response.json();
+      
+      const tbody = document.getElementById('scorers-tbody');
+      const statsCards = document.getElementById('stats-cards');
+      
+      if (!tbody || !statsCards) return;
+
+      // Renderizar tabla de goleadores
+      tbody.innerHTML = data.scorers.map(scorer => `
+        <tr class="hover:bg-gray-50 transition-colors">
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="flex items-center">
+              ${scorer.position === 1 ? `
+                <div class="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M5 16L3 5L8.5 12L12 4L15.5 12L21 5L19 16H5Z"/>
+                  </svg>
+                </div>
+              ` : scorer.position === 2 ? `
+                <div class="w-10 h-10 bg-gradient-to-br from-gray-300 to-gray-500 rounded-full flex items-center justify-center">
+                  <span class="text-white font-bold text-lg">${scorer.position}</span>
+                </div>
+              ` : scorer.position === 3 ? `
+                <div class="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center">
+                  <span class="text-white font-bold text-lg">${scorer.position}</span>
+                </div>
+              ` : `
+                <div class="w-10 h-10 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center">
+                  <span class="text-white font-bold text-lg">${scorer.position}</span>
+                </div>
+              `}
+            </div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="text-lg font-semibold text-gray-900">${scorer.name}</div>
+          </td>
+          <td class="px-6 py-4">
+            <div class="text-sm text-gray-600">${scorer.team}</div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-center">
+            <div class="flex items-center justify-center">
+              <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"/>
+              </svg>
+              <span class="text-2xl font-bold text-primary-600">${scorer.goals}</span>
+            </div>
+          </td>
+        </tr>
+      `).join('');
+
+      // Calcular estadísticas
+      const totalGoals = data.scorers.reduce((sum, scorer) => sum + scorer.goals, 0);
+      const topScorer = data.scorers[0];
+      const averageGoals = (totalGoals / data.scorers.length).toFixed(1);
+
+      // Renderizar tarjetas de estadísticas
+      statsCards.innerHTML = `
+        <div class="bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl p-6 text-white shadow-neomorphism">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-yellow-100 text-sm font-medium">Máximo Goleador</p>
+              <h3 class="text-2xl font-bold">${topScorer.name}</h3>
+              <p class="text-yellow-200 text-sm">${topScorer.team}</p>
+            </div>
+            <div class="text-4xl font-bold">${topScorer.goals}</div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-6 text-white shadow-neomorphism">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-green-100 text-sm font-medium">Total de Goles</p>
+              <h3 class="text-2xl font-bold">En el Torneo</h3>
+            </div>
+            <div class="text-4xl font-bold">${totalGoals}</div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-6 text-white shadow-neomorphism">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-blue-100 text-sm font-medium">Promedio de Goles</p>
+              <h3 class="text-2xl font-bold">Por Jugador</h3>
+            </div>
+            <div class="text-4xl font-bold">${averageGoals}</div>
+          </div>
+        </div>
+      `;
+
+    } catch (error) {
+      console.error('Error loading scorers:', error);
+      document.getElementById('scorers-tbody').innerHTML = `
+        <tr>
+          <td colspan="4" class="px-6 py-12 text-center text-red-600">
+            Error al cargar la tabla de goleadores. Por favor, intenta nuevamente.
+          </td>
+        </tr>
+      `;
+    }
+  });
+</script>
+</BaseLayout>

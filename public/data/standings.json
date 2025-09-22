@@ -1,0 +1,110 @@
+{
+  "standings": [
+    {
+      "group": "A",
+      "teams": [
+        {
+          "position": 1,
+          "team": "Club Real Madrid de Tumaco",
+          "pj": 3,
+          "pg": 2,
+          "pe": 1,
+          "pp": 0,
+          "gf": 8,
+          "gc": 3,
+          "dif": 5,
+          "pts": 7
+        },
+        {
+          "position": 2,
+          "team": "C.D. Camilo Torres de Popayán",
+          "pj": 3,
+          "pg": 2,
+          "pe": 0,
+          "pp": 1,
+          "gf": 6,
+          "gc": 4,
+          "dif": 2,
+          "pts": 6
+        },
+        {
+          "position": 3,
+          "team": "C.D. Sport Center Putumayo",
+          "pj": 3,
+          "pg": 1,
+          "pe": 1,
+          "pp": 1,
+          "gf": 4,
+          "gc": 5,
+          "dif": -1,
+          "pts": 4
+        },
+        {
+          "position": 4,
+          "team": "JAC. La Rioja Neiva",
+          "pj": 3,
+          "pg": 0,
+          "pe": 0,
+          "pp": 3,
+          "gf": 2,
+          "gc": 8,
+          "dif": -6,
+          "pts": 0
+        }
+      ]
+    },
+    {
+      "group": "B",
+      "teams": [
+        {
+          "position": 1,
+          "team": "ALDRIN F.C. Tumaco",
+          "pj": 3,
+          "pg": 3,
+          "pe": 0,
+          "pp": 0,
+          "gf": 9,
+          "gc": 2,
+          "dif": 7,
+          "pts": 9
+        },
+        {
+          "position": 2,
+          "team": "Calidad F.C. Pitalito",
+          "pj": 3,
+          "pg": 2,
+          "pe": 0,
+          "pp": 1,
+          "gf": 7,
+          "gc": 4,
+          "dif": 3,
+          "pts": 6
+        },
+        {
+          "position": 3,
+          "team": "C.D. León F.C. de Popayán",
+          "pj": 3,
+          "pg": 1,
+          "pe": 0,
+          "pp": 2,
+          "gf": 3,
+          "gc": 6,
+          "dif": -3,
+          "pts": 3
+        },
+        {
+          "position": 4,
+          "team": "Academia de fútbol Pumas de Mocoa",
+          "pj": 3,
+          "pg": 0,
+          "pe": 0,
+          "pp": 3,
+          "gf": 1,
+          "gc": 8,
+          "dif": -7,
+          "pts": 0
+        }
+      ]
+    }
+  ]
+}

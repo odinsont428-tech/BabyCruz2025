@@ -1,0 +1,34 @@
+{
+  "scorers": [
+    {
+      "position": 1,
+      "name": "Carlos Rodríguez",
+      "team": "Club Real Madrid de Tumaco",
+      "goals": 8
+    },
+    {
+      "position": 2,
+      "name": "Miguel Ángel Torres",
+      "team": "ALDRIN F.C. Tumaco",
+      "goals": 7
+    },
+    {
+      "position": 3,
+      "name": "Juan David López",
+      "team": "Calidad F.C. Pitalito",
+      "goals": 6
+    },
+    {
+      "position": 4,
+      "name": "Andrés Felipe Muñoz",
+      "team": "C.D. Camilo Torres de Popayán",
+      "goals": 5
+    },
+    {
+      "position": 5,
+      "name": "Daniel Santiago Pérez",
+      "team": "Real Sociedad F.C. Popayán",
+      "goals": 4
+    }
+  ]
+}

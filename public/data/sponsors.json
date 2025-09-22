@@ -1,0 +1,52 @@
+{
+  "sponsors": [
+    {
+      "name": "Colanta",
+      "logo": "https://images.pexels.com/photos/1556691/pexels-photo-1556691.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop",
+      "url": "https://colanta.com.co",
+      "category": "Patrocinador Principal"
+    },
+    {
+      "name": "Festival de Festivales",
+      "logo": "https://images.pexels.com/photos/1264210/pexels-photo-1264210.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop",
+      "url": "#",
+      "category": "Patrocinador Principal"
+    },
+    {
+      "name": "Alcaldía de La Cruz",
+      "logo": "https://images.pexels.com/photos/1367278/pexels-photo-1367278.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop",
+      "url": "#",
+      "category": "Institucional"
+    },
+    {
+      "name": "Gobernación de Nariño",
+      "logo": "https://images.pexels.com/photos/1556796/pexels-photo-1556796.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop",
+      "url": "#",
+      "category": "Institucional"
+    },
+    {
+      "name": "Corporación Deportiva Los Paisitas",
+      "logo": "https://images.pexels.com/photos/1556706/pexels-photo-1556706.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop",
+      "url": "#",
+      "category": "Deportivo"
+    },
+    {
+      "name": "Liga de Fútbol de Nariño",
+      "logo": "https://images.pexels.com/photos/1556713/pexels-photo-1556713.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop",
+      "url": "#",
+      "category": "Deportivo"
+    },
+    {
+      "name": "OSBOL Sport Marketing",
+      "logo": "https://images.pexels.com/photos/1556720/pexels-photo-1556720.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop",
+      "url": "#",
+      "category": "Deportivo"
+    },
+    {
+      "name": "Fortaleza Deportes",
+      "logo": "https://images.pexels.com/photos/1556725/pexels-photo-1556725.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop",
+      "url": "#",
+      "category": "Deportivo"
+    }
+  ]
+}

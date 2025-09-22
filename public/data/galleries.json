@@ -1,0 +1,82 @@
+{
+  "galleries": [
+    {
+      "id": "dia-1",
+      "title": "Día 1 - Viernes 19 de Septiembre",
+      "date": "2025-09-19",
+      "description": "Jornada inaugural del torneo",
+      "images": [
+        {
+          "src": "https://images.pexels.com/photos/114296/pexels-photo-114296.jpeg?auto=compress&cs=tinysrgb&w=1200",
+          "thumbnail": "https://images.pexels.com/photos/114296/pexels-photo-114296.jpeg?auto=compress&cs=tinysrgb&w=400",
+          "alt": "Jugadores celebrando gol",
+          "caption": "Primer gol del torneo - Real Sociedad vs Club D. Reyes"
+        },
+        {
+          "src": "https://images.pexels.com/photos/1171084/pexels-photo-1171084.jpeg?auto=compress&cs=tinysrgb&w=1200",
+          "thumbnail": "https://images.pexels.com/photos/1171084/pexels-photo-1171084.jpeg?auto=compress&cs=tinysrgb&w=400",
+          "alt": "Acción de juego",
+          "caption": "Disputa por el balón en el medio campo"
+        },
+        {
+          "src": "https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg?auto=compress&cs=tinysrgb&w=1200",
+          "thumbnail": "https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg?auto=compress&cs=tinysrgb&w=400",
+          "alt": "Portero en acción",
+          "caption": "Espectacular atajada del portero de Club Real Madrid"
+        }
+      ]
+    },
+    {
+      "id": "dia-2", 
+      "title": "Día 2 - Sábado 20 de Septiembre",
+      "date": "2025-09-20",
+      "description": "Segunda jornada con 8 emocionantes partidos",
+      "images": [
+        {
+          "src": "https://images.pexels.com/photos/9009982/pexels-photo-9009982.jpeg?auto=compress&cs=tinysrgb&w=1200",
+          "thumbnail": "https://images.pexels.com/photos/9009982/pexels-photo-9009982.jpeg?auto=compress&cs=tinysrgb&w=400",
+          "alt": "Equipo celebrando",
+          "caption": "ALDRIN F.C. celebra la victoria ante C.D. León"
+        },
+        {
+          "src": "https://images.pexels.com/photos/209977/pexels-photo-209977.jpeg?auto=compress&cs=tinysrgb&w=1200",
+          "thumbnail": "https://images.pexels.com/photos/209977/pexels-photo-209977.jpeg?auto=compress&cs=tinysrgb&w=400",
+          "alt": "Jugada de ataque",
+          "caption": "Contraataque veloz de Calidad F.C. Pitalito"
+        },
+        {
+          "src": "https://images.pexels.com/photos/1618269/pexels-photo-1618269.jpeg?auto=compress&cs=tinysrgb&w=1200",
+          "thumbnail": "https://images.pexels.com/photos/1618269/pexels-photo-1618269.jpeg?auto=compress&cs=tinysrgb&w=400",
+          "alt": "Tiro libre",
+          "caption": "Tiro libre ejecutado por La Plata F.C."
+        }
+      ]
+    },
+    {
+      "id": "dia-3",
+      "title": "Día 3 - Domingo 21 de Septiembre",
+      "date": "2025-09-21", 
+      "description": "Continuación de la fase de grupos",
+      "images": [
+        {
+          "src": "https://images.pexels.com/photos/2916814/pexels-photo-2916814.jpeg?auto=compress&cs=tinysrgb&w=1200",
+          "thumbnail": "https://images.pexels.com/photos/2916814/pexels-photo-2916814.jpeg?auto=compress&cs=tinysrgb&w=400",
+          "alt": "Jugadores en formación",
+          "caption": "Los equipos se alistan para el inicio del partido"
+        },
+        {
+          "src": "https://images.pexels.com/photos/1171084/pexels-photo-1171084.jpeg?auto=compress&cs=tinysrgb&w=1200",
+          "thumbnail": "https://images.pexels.com/photos/1171084/pexels-photo-1171084.jpeg?auto=compress&cs=tinysrgb&w=400",
+          "alt": "Duelo aéreo",
+          "caption": "Disputa aérea en el área rival"
+        },
+        {
+          "src": "https://images.pexels.com/photos/3886658/pexels-photo-3886658.jpeg?auto=compress&cs=tinysrgb&w=1200",
+          "thumbnail": "https://images.pexels.com/photos/3886658/pexels-photo-3886658.jpeg?auto=compress&cs=tinysrgb&w=400",
+          "alt": "Celebración de gol",
+          "caption": "Momento de celebración tras anotar el gol decisivo"
+        }
+      ]
+    }
+  ]
+}
