@@ -1,7 +1,6 @@
----
+--- 
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-
 <BaseLayout title="Galerías de Fotos - Festival BabyFútbol Colanta 2025" currentPage="galerias">
   <div class="py-8 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,8 +16,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <!-- Galleries Container -->
       <div id="galleries-container" class="space-y-12">
-        <!-- Loading state -->
-        <div class="text-center py-12">
+        <!-- Loading state (se reemplaza luego) -->
+        <div id="loading-state" class="text-center py-12">
           <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto"></div>
           <p class="mt-4 text-gray-600">Cargando galerías...</p>
         </div>
@@ -28,191 +27,286 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <script>
-  // Función para inicializar PhotoSwipe
-  function initPhotoSwipe() {
-    console.log('Inicializando PhotoSwipe...');
-    
-    // Verificar que PhotoSwipe esté disponible
-    if (!window.PhotoSwipeLightbox) {
-      console.error('PhotoSwipeLightbox no está disponible');
+/*
+  Se espera /data/galleries.json con formato:
+  { "galleries": [ { id, title, date, description, images: [ { src, thumbnail, alt, caption, width, height, srcWidth, srcHeight, thumbnailWidth, thumbnailHeight } ] } ] }
+*/
+
+/* CONFIG */
+const GALLERIES_JSON = '/data/galleries.json';
+const IMAGES_PER_PAGE = 9;
+const PREFETCH_ON_HOVER = true;
+
+/* Helpers */
+const el = selector => document.querySelector(selector);
+const createEl = tag => document.createElement(tag);
+function safeNumber(v) { if (v === undefined || v === null) return null; const n = Number(v); return Number.isFinite(n) ? n : null; }
+
+/* Lazy loader */
+function setupLazyLoading(root) {
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const img = e.target;
+      const src = img.getAttribute('data-src');
+      if (src) {
+        img.src = src;
+        img.removeAttribute('data-src');
+        img.classList.remove('opacity-0');
+        img.classList.add('opacity-100');
+      }
+      obs.unobserve(img);
+    });
+  }, { rootMargin: '200px 0px' });
+
+  root.querySelectorAll('img[data-src]').forEach(img => io.observe(img));
+}
+
+function prefetchSrc(url) {
+  try { const i = new Image(); i.src = url; } catch (e) {}
+}
+
+/* Build gallery markup */
+function buildGalleryHTML(gallery, galleryIndex, initialCount = IMAGES_PER_PAGE) {
+  const header = `
+    <div class="bg-white rounded-2xl shadow-neomorphism overflow-hidden">
+      <div class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white p-6">
+        <h2 class="text-2xl font-display font-bold">${gallery.title}</h2>
+        <p class="text-primary-100 mt-2">${gallery.description || ''}</p>
+        <p class="text-primary-200 text-sm mt-1">
+          ${new Date(gallery.date).toLocaleDateString('es-CO', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+        </p>
+      </div>
+      <div class="p-6">
+  `;
+  const footer = `</div></div>`;
+
+  const imagesHTML = gallery.images.map((image, idx) => {
+    const tW = safeNumber(image.thumbnailWidth) || safeNumber(image.width) || 4;
+    const tH = safeNumber(image.thumbnailHeight) || safeNumber(image.height) || 3;
+    const ratioAttr = `style="aspect-ratio: ${tW}/${tH};"`;
+
+    const pswpW = safeNumber(image.srcWidth) || safeNumber(image.width) || 1200;
+    const pswpH = safeNumber(image.srcHeight) || safeNumber(image.height) || Math.round(pswpW * (tH / tW));
+
+    const thumbSrc = image.thumbnail || '';
+    const alt = (image.alt || '').replace(/"/g, "'");
+
+    const itemId = `g-${galleryIndex}-i-${idx}`;
+
+    return `
+      <a href="${image.src}" 
+         id="${itemId}" 
+         class="gallery-item block overflow-hidden rounded-xl shadow-neomorphism-sm hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer group"
+         data-pswp-width="${pswpW}" 
+         data-pswp-height="${pswpH}"
+         ${ratioAttr}
+         data-index="${idx}">
+        <img data-src="${thumbSrc}" alt="${alt}" loading="lazy"
+             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 opacity-0">
+        <span class="image-caption sr-only">${(image.caption || '').replace(/"/g, "'")}</span>
+      </a>
+    `;
+  }).join('');
+
+  return `
+    <div class="gallery-block" data-gallery-index="${galleryIndex}">
+      ${header}
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 gallery-grid">
+          ${imagesHTML}
+        </div>
+
+        <div class="mt-4 text-center gallery-controls">
+          ${gallery.images.length > initialCount ? `<button class="load-more inline-flex items-center gap-2 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors">Ver más</button>` : ''}
+        </div>
+      ${footer}
+    </div>
+  `;
+}
+
+/* --- Reemplazo: initPhotoSwipeForRoots con single-click next y destrucción previa --- */
+function initPhotoSwipeForRoots() {
+  if (!window.PhotoSwipeLightbox) {
+    console.warn('PhotoSwipeLightbox no está disponible');
+    return;
+  }
+
+  // destruir instancias previas
+  if (window._pswpInstanceArray && Array.isArray(window._pswpInstanceArray)) {
+    window._pswpInstanceArray.forEach(inst => {
+      try { inst.destroy && inst.destroy(); } catch(_) {}
+    });
+  }
+  window._pswpInstanceArray = [];
+
+  document.querySelectorAll('.gallery-grid').forEach((grid, gridIndex) => {
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: grid,
+      children: 'a.gallery-item',
+      pswpModule: () => import('https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.js'),
+      bgOpacity: 0.9,
+      loop: true,
+      showHideAnimationType: 'zoom',
+      preload: [1, 3],
+      paddingFn: () => ({ top: 30, bottom: 30, left: 70, right: 70 })
+    });
+
+    // caption UI
+    lightbox.on('uiRegister', () => {
+      lightbox.pswp.ui.registerElement({
+        name: 'custom-caption',
+        order: 9,
+        isButton: false,
+        appendTo: 'root',
+        html: '',
+        onInit: (el, pswp) => {
+          const update = () => {
+            const curr = pswp.currSlide?.data?.element;
+            let captionHTML = '';
+            if (curr) {
+              const captionElement = curr.querySelector('.image-caption');
+              if (captionElement) captionHTML = captionElement.textContent || '';
+            }
+            el.innerHTML = captionHTML ? `<div class="pswp__caption__center">${captionHTML}</div>` : '';
+          };
+          pswp.on('change', update);
+          update();
+        }
+      });
+    });
+
+    // Registrar single-click handler y side-click handler en afterInit
+    lightbox.on('afterInit', () => {
+      try {
+        const pswp = lightbox.pswp;
+
+        if (!pswp.__singleClickHandlerRegistered) {
+          pswp.__singleClickHandlerRegistered = true;
+
+          pswp.on('contentClick', (event) => {
+            try {
+              const slide = pswp.currSlide;
+              const isZoomed = slide && slide.content && typeof slide.content.isZoomed === 'function'
+                ? slide.content.isZoomed()
+                : (pswp.getZoomLevel && pswp.getZoomLevel() > 1);
+
+              if (isZoomed) return;
+              pswp.next();
+            } catch (err) {
+              try { pswp.next(); } catch (_) {}
+            }
+          });
+        }
+
+        if (!pswp.__sideClickHandlerRegistered) {
+          pswp.__sideClickHandlerRegistered = true;
+          pswp.on('click', (e) => {
+            try {
+              const ev = e && e.event ? e.event : null;
+              if (!ev || ev.type !== 'click') return;
+              const rect = pswp.container.getBoundingClientRect();
+              const x = ev.clientX - rect.left;
+              if (x < rect.width * 0.4) {
+                pswp.prev();
+              } else if (x > rect.width * 0.6) {
+                pswp.next();
+              }
+            } catch (_) {}
+          });
+        }
+
+      } catch (err) {
+        console.warn('No se pudo registrar contentClick handler:', err);
+      }
+    });
+
+    lightbox.init();
+    window._pswpInstanceArray.push(lightbox);
+  });
+}
+
+/* Setup interactions: pagination, lazy-load, prefetch */
+function setupGalleryInteractions() {
+  document.querySelectorAll('.gallery-block').forEach((block) => {
+    const grid = block.querySelector('.gallery-grid');
+    const controls = block.querySelector('.gallery-controls');
+    const btn = controls && controls.querySelector('.load-more');
+    if (!btn) return;
+
+    const items = Array.from(grid.querySelectorAll('.gallery-item'));
+    const hideFromIndex = IMAGES_PER_PAGE;
+    items.forEach((it, i) => {
+      if (i >= hideFromIndex) it.style.display = 'none';
+    });
+
+    btn.addEventListener('click', () => {
+      const hidden = items.filter(it => it.style.display === 'none');
+      const nextBatch = hidden.slice(0, IMAGES_PER_PAGE);
+      nextBatch.forEach(it => it.style.display = '');
+      setupLazyLoading(grid);
+      if (hidden.length <= IMAGES_PER_PAGE) btn.remove();
+      initPhotoSwipeForRoots();
+    });
+
+    if (PREFETCH_ON_HOVER) {
+      items.forEach(a => {
+        const bigUrl = a.getAttribute('href');
+        let hoverTimer = null;
+        a.addEventListener('mouseenter', () => {
+          hoverTimer = setTimeout(() => prefetchSrc(bigUrl), 200);
+        });
+        a.addEventListener('mouseleave', () => { clearTimeout(hoverTimer); });
+      });
+    }
+  });
+
+  document.querySelectorAll('.gallery-grid').forEach(g => setupLazyLoading(g));
+}
+
+/* Load galleries JSON and render */
+async function loadGalleries() {
+  const container = el('#galleries-container');
+  const loading = el('#loading-state');
+  try {
+    const res = await fetch(GALLERIES_JSON, { cache: 'no-store' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const json = await res.json();
+    const galleries = json.galleries || [];
+
+    if (!galleries.length) {
+      container.innerHTML = `<div class="text-center py-12">No hay galerías disponibles.</div>`;
       return;
     }
 
-    // Buscar todas las galerías
-    const galleries = document.querySelectorAll('[data-gallery]');
-    
-    galleries.forEach((gallery, index) => {
-      console.log(`Configurando galería ${index + 1}`);
-      
-      // Crear una instancia de PhotoSwipe para cada galería
-      const lightbox = new PhotoSwipeLightbox({
-        gallery: gallery,
-        children: 'a.gallery-item',
-        
-        // Configuración de PhotoSwipe
-        pswpModule: () => import('https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.js'),
-        
-        // Opciones
-        bgOpacity: 0.9,
-        loop: true,
-        zoom: true,
-        preload: [1, 3],
-        showHideAnimationType: 'zoom',
-        
-        // Configurar el padding
-        paddingFn: (viewportSize) => {
-          return {
-            top: 30,
-            bottom: 30,
-            left: 70,
-            right: 70
-          };
-        }
-      });
+    const html = galleries.map((g, idx) => buildGalleryHTML(g, idx, IMAGES_PER_PAGE)).join('');
+    container.innerHTML = html;
+    if (loading) loading.remove();
 
-      // Agregar captions
-      lightbox.on('uiRegister', function () {
-        lightbox.pswp.ui.registerElement({
-          name: 'custom-caption',
-          order: 9,
-          isButton: false,
-          appendTo: 'root',
-          html: 'Caption text',
-          onInit: (el, pswp) => {
-            lightbox.pswp.on('change', () => {
-              const currSlideElement = lightbox.pswp.currSlide?.data.element;
-              let captionHTML = '';
-              
-              if (currSlideElement) {
-                const captionElement = currSlideElement.querySelector('.image-caption');
-                if (captionElement) {
-                  captionHTML = captionElement.textContent || '';
-                }
-              }
-              
-              el.innerHTML = captionHTML ? 
-                `<div class="pswp__caption__center">${captionHTML}</div>` : '';
-            });
-          }
-        });
-      });
+    setupGalleryInteractions();
+    initPhotoSwipeForRoots();
 
-      // Event listeners
-      lightbox.on('beforeOpen', () => {
-        console.log('PhotoSwipe se está abriendo...');
-      });
-
-      lightbox.on('afterInit', () => {
-        console.log(`PhotoSwipe inicializado para galería ${index + 1}`);
-      });
-
-      // Inicializar
-      lightbox.init();
-    });
+    console.log('Galerías cargadas:', galleries.length);
+  } catch (err) {
+    console.error('Error loading galleries:', err);
+    if (loading) loading.innerHTML = '<p class="text-red-600">Error cargando galerías. Intenta recargar.</p>';
   }
+}
 
-  // Función para cargar y mostrar galerías
-  async function loadGalleries() {
-    try {
-      console.log('Cargando datos de galerías...');
-      const response = await fetch('/data/galleries.json');
-      
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      
-      const data = await response.json();
-      console.log('Datos cargados:', data);
-      
-      const galleriesContainer = document.getElementById('galleries-container');
-      
-      if (!galleriesContainer) {
-        console.error('Container de galerías no encontrado');
-        return;
-      }
+/* Init */
+function waitForDepsAndLoad() {
+  loadGalleries();
+}
 
-      // Renderizar galerías
-      galleriesContainer.innerHTML = data.galleries.map((gallery, galleryIndex) => `
-        <div class="bg-white rounded-2xl shadow-neomorphism overflow-hidden">
-          <!-- Header de la galería -->
-          <div class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white p-6">
-            <h2 class="text-2xl font-display font-bold">${gallery.title}</h2>
-            <p class="text-primary-100 mt-2">${gallery.description}</p>
-            <p class="text-primary-200 text-sm mt-1">
-              ${new Date(gallery.date).toLocaleDateString('es-CO', { 
-                weekday: 'long', 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
-              })}
-            </p>
-          </div>
-          
-          <!-- Grid de imágenes -->
-          <div class="p-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" data-gallery="gallery-${gallery.id}">
-              ${gallery.images.map((image, imageIndex) => `
-                <a href="${image.src}" 
-                   class="gallery-item block aspect-[4/3] overflow-hidden rounded-xl shadow-neomorphism-sm hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer group"
-                   data-pswp-width="1200" 
-                   data-pswp-height="800">
-                  <img src="${image.thumbnail}" 
-                       alt="${image.alt}"
-                       loading="lazy"
-                       class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                  <span class="image-caption sr-only">${image.caption}</span>
-                </a>
-              `).join('')}
-            </div>
-          </div>
-        </div>
-      `).join('');
-
-      console.log('Galerías renderizadas, inicializando PhotoSwipe...');
-      
-      // Esperar un momento para que el DOM se actualice
-      setTimeout(() => {
-        initPhotoSwipe();
-      }, 100);
-
-    } catch (error) {
-      console.error('Error loading galleries:', error);
-      const galleriesContainer = document.getElementById('galleries-container');
-      if (galleriesContainer) {
-        galleriesContainer.innerHTML = `
-          <div class="text-center py-12">
-            <div class="text-red-600 mb-4">
-              <svg class="w-12 h-12 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
-              </svg>
-            </div>
-            <p class="text-red-600 font-semibold">Error al cargar las galerías</p>
-            <p class="text-gray-600 mt-2">Por favor, intenta recargar la página</p>
-            <button onclick="window.location.reload()" class="mt-4 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors">
-              Recargar
-            </button>
-          </div>
-        `;
-      }
-    }
-  }
-
-  // Esperar a que PhotoSwipe esté disponible y luego cargar galerías
-  function waitForPhotoSwipe() {
-    if (window.PhotoSwipeLightbox) {
-      console.log('PhotoSwipe disponible, cargando galerías...');
-      loadGalleries();
-    } else {
-      console.log('Esperando PhotoSwipe...');
-      setTimeout(waitForPhotoSwipe, 100);
-    }
-  }
-
-  // Iniciar cuando el DOM esté listo
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', waitForPhotoSwipe);
-  } else {
-    waitForPhotoSwipe();
-  }
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', waitForDepsAndLoad);
+} else {
+  waitForDepsAndLoad();
+}
 </script>
-</BaseLayout>
+
+<style>
+.gallery-grid img.opacity-0 { transition: opacity .35s ease, transform .35s ease; }
+.gallery-grid img.opacity-100 { opacity: 1; }
+.shadow-neomorphism { box-shadow: 12px 12px 24px rgba(0,0,0,0.06), -8px -8px 18px rgba(255,255,255,0.8); }
+.shadow-neomorphism-sm { box-shadow: 6px 6px 12px rgba(0,0,0,0.04), -4px -4px 8px rgba(255,255,255,0.8); }
+</style>
