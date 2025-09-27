@@ -1,58 +1,159 @@
 {
+  "teams": {
+    "club-real-madrid-de-tumaco": {
+      "name": "Club Real Madrid de Tumaco",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981411/19_alaltg.webp"
+    },
+    "cd-sport-center-putumayo": {
+      "name": "C.D. Sport Center Putumayo",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981410/12_cswxso.webp"
+    },
+    "cd-camilo-torres-de-popayan": {
+      "name": "C.D. Camilo Torres de Popayán",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981409/7_p5prsa.webp"
+    },
+    "jac-la-rioja-neiva": {
+      "name": "JAC. La Rioja Neiva",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981412/25_vvtofg.webp"
+    },
+    "aldrin-fc-tumaco": {
+      "name": "ALDRIN F.C. Tumaco",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981411/20_jvgbqz.webp"
+    },
+    "cd-leon-fc-de-popayan": {
+      "name": "C.D. León F.C. de Popayán",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981409/8_b9txud.webp"
+    },
+    "calidad-fc-pitalito": {
+      "name": "Calidad F.C. Pitalito",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981412/23_hnocuf.webp"
+    },
+    "pumas-de-mocoa": {
+      "name": "Academia de fútbol Pumas de Mocoa",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981409/4_twwvj7.webp"
+    },
+    "estudiantes-fc-pasto": {
+      "name": "Estudiantes F.C. Pasto",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981410/15_lwu36a.webp"
+    },
+    "cd-sport-cauca-popayan": {
+      "name": "C.D. Sport Cauca Popayán",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981410/11_s8pcbi.webp"
+    },
+    "csd-aston-huila-neiva": {
+      "name": "CSD Aston Huila Neiva",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981412/24_hmhbqq.webp"
+    },
+    "tierra-talentos-puerto-asis": {
+      "name": "Tierra de Talentos Puerto Asís",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981409/1_vln1qi.webp"
+    },
+    "deportivo-pasto": {
+      "name": "Deportivo Pasto",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981412/21_t9dgu0.webp"
+    },
+    "deportivo-caucanos-popayan": {
+      "name": "Deportivo Caucanos Popayán",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981409/5_go5zar.webp"
+    },
+    "promesas-fc-neiva": {
+      "name": "Promesas F.C. Neiva",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981412/22_eladpf.webp"
+    },
+    "nuevos-talentos-orito": {
+      "name": "Club Nuevos Talentos Orito",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981409/3_eingdb.webp"
+    },
+    "radi-fc-ipiales": {
+      "name": "RADI F.C. Ipiales",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981411/18_td3lzw.webp"
+    },
+    "elite-independiente-popayan": {
+      "name": "Elite Independiente Popayán",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981409/6_ifgwcx.webp"
+    },
+    "la-plata-fc-m-la-plata": {
+      "name": "La Plata F.C. M. La Plata",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981410/9_g0gvcd.webp"
+    },
+    "atletico-fc-florencia": {
+      "name": "Atlético F.C. Florencia",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981410/14_jxvkx7.webp"
+    },
+    "fm-futbol-la-cruz-narino": {
+      "name": "FM de fútbol La Cruz Nariño",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981410/16_ls6ddq.webp"
+    },
+    "club-eder-ruales-de-ipiales": {
+      "name": "Club Eder Rúales de Ipiales",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981411/17_vygtsu.webp"
+    },
+    "real-sociedad-fc-popayan": {
+      "name": "Real Sociedad F.C. Popayán",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981410/16_ls6ddq.webp"
+    },
+    "sporting-caqueta": {
+      "name": "Sporting Caquetá",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981410/13_nouisb.webp"
+    },    "club-d-reyes-fc-de-neiva": {
+      "name": "C.D. Reyes F.C. de Neiva",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981410/10_rgdd6q.webp"
+    }
+  },
   "groups": [
     {
       "name": "GRUPO A",
       "teams": [
-        { "id": 1, "name": "Club Real Madrid de Tumaco" },
-        { "id": 2, "name": "C.D. Sport Center Putumayo" },
-        { "id": 3, "name": "C.D. Camilo Torres de Popayán" },
-        { "id": 4, "name": "JAC. La Rioja Neiva" }
+        "club-real-madrid-de-tumaco",
+        "cd-sport-center-putumayo",
+        "cd-camilo-torres-de-popayan",
+        "jac-la-rioja-neiva"
       ]
     },
     {
-      "name": "GRUPO B", 
+      "name": "GRUPO B",
       "teams": [
-        { "id": 5, "name": "ALDRIN F.C. Tumaco" },
-        { "id": 6, "name": "C.D. León F.C. de Popayán" },
-        { "id": 7, "name": "Calidad F.C. Pitalito" },
-        { "id": 8, "name": "Academia de fútbol Pumas de Mocoa" }
+        "aldrin-fc-tumaco",
+        "cd-leon-fc-de-popayan",
+        "calidad-fc-pitalito",
+        "pumas-de-mocoa"
       ]
     },
     {
       "name": "GRUPO C",
       "teams": [
-        { "id": 9, "name": "Estudiantes F.C. Pasto" },
-        { "id": 10, "name": "C.D. Sport Cauca Popayán" },
-        { "id": 11, "name": "CSD Aston Huila Neiva" },
-        { "id": 12, "name": "Tierra de Talentos Puerto Asís" }
+        "estudiantes-fc-pasto",
+        "cd-sport-cauca-popayan",
+        "csd-aston-huila-neiva",
+        "tierra-talentos-puerto-asis"
       ]
     },
     {
       "name": "GRUPO D",
       "teams": [
-        { "id": 13, "name": "Deportivo Pasto" },
-        { "id": 14, "name": "Deportivo Caucanos Popayán" },
-        { "id": 15, "name": "Promesas F.C. Neiva" },
-        { "id": 16, "name": "Club Nuevos Talentos Orito" }
+        "deportivo-pasto",
+        "deportivo-caucanos-popayan",
+        "promesas-fc-neiva",
+        "nuevos-talentos-orito"
       ]
     },
     {
       "name": "GRUPO E",
       "teams": [
-        { "id": 17, "name": "RADI F.C. Ipiales" },
-        { "id": 18, "name": "Elite Independiente Popayán" },
-        { "id": 19, "name": "La Plata F.C. M. La Plata" },
-        { "id": 20, "name": "Atlético F.C. Florencia" }
+        "radi-fc-ipiales",
+        "elite-independiente-popayan",
+        "la-plata-fc-m-la-plata",
+        "atletico-fc-florencia"
       ]
     },
     {
       "name": "GRUPO F",
       "teams": [
-        { "id": 21, "name": "FM de fútbol La Cruz Nariño" },
-        { "id": 22, "name": "Club Eder Rúales de Ipiales" },
-        { "id": 23, "name": "Real Sociedad F.C. Popayán" },
-        { "id": 24, "name": "Club D. Reyes F.C. de Neiva" },
-        { "id": 25, "name": "Sporting Caquetá" }
+        "fm-futbol-la-cruz-narino",
+        "club-eder-ruales-de-ipiales",
+        "real-sociedad-fc-popayan",
+        "club-d-reyes-fc-de-neiva",
+        "sporting-caqueta"
       ]
     }
   ]

@@ -1,80 +1,479 @@
 {
   "matches": [
     {
-      "date": "2025-09-19",
+      "date": "2025-09-20",
       "venue": "Estadio Municipal Fenelón Ordóñez",
       "games": [
         {
           "time": "17:00",
           "homeTeam": "Club Eder Rúales de Ipiales",
           "awayTeam": "Sporting Caquetá",
-          "group": "F"
+          "group": "F",
+          "result": "0-0",
+          "homeScore": 0,
+          "awayScore": 0
         },
         {
           "time": "18:15",
           "homeTeam": "Real Sociedad F.C. Popayán",
           "awayTeam": "Club D. Reyes F.C. de Neiva",
-          "group": "F"
+          "group": "F",
+          "result": "1-2",
+          "homeScore": 1,
+          "awayScore": 2
         },
         {
           "time": "19:30",
           "homeTeam": "Club Real Madrid de Tumaco",
           "awayTeam": "C.D. Sport Center Putumayo",
-          "group": "A"
+          "group": "A",
+          "result": "4-0",
+          "homeScore": 4,
+          "awayScore": 0
         }
       ]
     },
     {
-      "date": "2025-09-20",
+      "date": "2025-09-21",
       "venue": "Estadio Municipal Fenelón Ordóñez",
       "games": [
         {
           "time": "08:00",
           "homeTeam": "Deportivo Pasto",
           "awayTeam": "Deportivo Caucanos Popayán",
-          "group": "D"
+          "group": "D",
+          "result": "0-1",
+          "homeScore": 0,
+          "awayScore": 1
         },
         {
           "time": "09:15",
           "homeTeam": "Promesas F.C. Neiva",
           "awayTeam": "Club Nuevos Talentos Orito",
-          "group": "D"
+          "group": "D",
+          "result": "0-1",
+          "homeScore": 0,
+          "awayScore": 1
         },
         {
           "time": "10:30",
           "homeTeam": "Calidad F.C. Pitalito",
           "awayTeam": "Academia de fútbol Pumas de Mocoa",
-          "group": "B"
+          "group": "B",
+          "result": "1-1",
+          "homeScore": 1,
+          "awayScore": 1
         },
         {
           "time": "11:45",
           "homeTeam": "C.D. Camilo Torres de Popayán",
           "awayTeam": "JAC. La Rioja Neiva",
-          "group": "A"
+          "group": "A",
+          "result": "0-0",
+          "homeScore": 0,
+          "awayScore": 0
         },
         {
           "time": "13:00",
           "homeTeam": "ALDRIN F.C. Tumaco",
           "awayTeam": "C.D. León F.C. de Popayán",
-          "group": "B"
+          "group": "B",
+          "result": "0-0",
+          "homeScore": 0,
+          "awayScore": 0
         },
         {
           "time": "14:15",
           "homeTeam": "La Plata F.C. M. La Plata",
           "awayTeam": "Atlético F.C. Florencia",
-          "group": "E"
+          "group": "E",
+          "result": "0-4",
+          "homeScore": 0,
+          "awayScore": 4
         },
         {
           "time": "15:30",
           "homeTeam": "Real Sociedad F.C. Popayán",
           "awayTeam": "Sporting Caquetá",
-          "group": "F"
+          "group": "F",
+          "result": "0-2",
+          "homeScore": 0,
+          "awayScore": 2
         },
         {
           "time": "16:45",
           "homeTeam": "FM de fútbol La Cruz Nariño",
           "awayTeam": "Club Eder Rúales de Ipiales",
-          "group": "F"
+          "group": "F",
+          "result": "0-1",
+          "homeScore": 0,
+          "awayScore": 1
+        }
+      ]
+    },
+    {
+      "date": "2025-09-22",
+      "venue": "Estadio Municipal Fenelón Ordóñez",
+      "games": [
+        {
+          "time": "08:00",
+          "homeTeam": "Estudiantes F.C. Pasto",
+          "awayTeam": "C.D. Sport Cauca Popayán",
+          "result": "2-0",
+          "homeScore": 2,
+          "awayScore": 0
+        },
+        {
+          "time": "09:15",
+          "homeTeam": "CSD Aston Huila Neiva",
+          "awayTeam": "Tierra de Talentos Puerto Asís",
+          "result": "2-0",
+          "homeScore": 2,
+          "awayScore": 0
+        },
+        {
+          "time": "10:30",
+          "homeTeam": "RADI F.C. Ipiales",
+          "awayTeam": "Elite Independiente Popayán",
+          "result": "1-0",
+          "homeScore": 1,
+          "awayScore": 0
+        },
+        {
+          "time": "11:45",
+          "homeTeam": "Deportivo Pasto",
+          "awayTeam": "Promesas F.C. Neiva",
+          "result": "0-0",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "time": "13:00",
+          "homeTeam": "C.D. Sport Center Putumayo",
+          "awayTeam": "JAC. La Rioja Neiva",
+          "result": "0-2",
+          "homeScore": 0,
+          "awayScore": 2
+        },
+        {
+          "time": "14:15",
+          "homeTeam": "Club Real Madrid de Tumaco",
+          "awayTeam": "C.D. Camilo Torres de Popayán",
+          "result": "0-1",
+          "homeScore": 0,
+          "awayScore": 1
+        },
+        {
+          "time": "15:30",
+          "homeTeam": "Club Eder Rúales de Ipiales",
+          "awayTeam": "Club D. Reyes F.C. de Neiva",
+          "result": "2-3",
+          "homeScore": 2,
+          "awayScore": 3
+        },
+        {
+          "time": "16:45",
+          "homeTeam": "FM de fútbol La Cruz Nariño",
+          "awayTeam": "Sporting Caquetá",
+          "result": "0-0",
+          "homeScore": 0,
+          "awayScore": 0
+        }
+      ]
+    },
+    {
+      "date": "2025-09-23",
+      "venue": "Estadio Municipal Fenelón Ordóñez",
+      "games": [
+        {
+          "time": "08:00",
+          "homeTeam": "ALDRIN F.C. Tumaco",
+          "awayTeam": "Calidad F.C. Pitalito",
+          "result": "1-0",
+          "homeScore": 1,
+          "awayScore": 0
+        },
+        {
+          "time": "09:15",
+          "homeTeam": "C.D. León F.C. de Popayán",
+          "awayTeam": "Academia de fútbol Pumas de Mocoa",
+          "result": "2-2",
+          "homeScore": 2,
+          "awayScore": 2
+        },
+        {
+          "time": "10:30",
+          "homeTeam": "Estudiantes F.C. Pasto",
+          "awayTeam": "CSD Aston Huila Neiva",
+          "result": "1-2",
+          "homeScore": 1,
+          "awayScore": 2
+        },
+        {
+          "time": "11:45",
+          "homeTeam": "C.D. Sport Cauca Popayán",
+          "awayTeam": "Tierra de Talentos Puerto Asís",
+          "result": "2-0",
+          "homeScore": 2,
+          "awayScore": 0
+        },
+        {
+          "time": "13:00",
+          "homeTeam": "Club D. Reyes F.C. de Neiva",
+          "awayTeam": "Sporting Caquetá",
+          "result": "2-4",
+          "homeScore": 2,
+          "awayScore": 4
+        },
+        {
+          "time": "14:15",
+          "homeTeam": "RADI F.C. Ipiales",
+          "awayTeam": "La Plata F.C. M. La Plata",
+          "result": "0-0",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "time": "15:30",
+          "homeTeam": "Elite Independiente Popayán",
+          "awayTeam": "Atlético F.C. Florencia",
+          "result": "1-2",
+          "homeScore": 1,
+          "awayScore": 2
+        },
+        {
+          "time": "16:45",
+          "homeTeam": "FM de fútbol La Cruz Nariño",
+          "awayTeam": "Real Sociedad F.C. Popayán",
+          "result": "0-0",
+          "homeScore": 0,
+          "awayScore": 0
+        }
+      ]
+    },
+    {
+      "date": "2025-09-24",
+      "venue": "Estadio Municipal Fenelón Ordóñez",
+      "games": [
+        {
+          "time": "08:00",
+          "homeTeam": "Estudiantes F.C. Pasto",
+          "awayTeam": "Tierra de Talentos Puerto Asís",
+          "result": "5-1",
+          "homeScore": 5,
+          "awayScore": 1
+        },
+        {
+          "time": "09:15",
+          "homeTeam": "C.D. Sport Cauca Popayán",
+          "awayTeam": "CSD Aston Huila Neiva",
+          "result": "0-0",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "time": "10:30",
+          "homeTeam": "Deportivo Pasto",
+          "awayTeam": "Club Nuevos Talentos Orito",
+          "result": "2-2",
+          "homeScore": 2,
+          "awayScore": 2
+        },
+        {
+          "time": "11:45",
+          "homeTeam": "Deportivo Caucanos Popayán",
+          "awayTeam": "Promesas F.C. Neiva",
+          "result": "0-0",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "time": "13:00",
+          "homeTeam": "C.D. León F.C. de Popayán",
+          "awayTeam": "Calidad F.C. Pitalito",
+          "result": "2-1",
+          "homeScore": 2,
+          "awayScore": 1
+        },
+        {
+          "time": "14:15",
+          "homeTeam": "ALDRIN F.C. Tumaco",
+          "awayTeam": "Academia de fútbol Pumas de Mocoa",
+          "result": "0-0",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "time": "15:30",
+          "homeTeam": "C.D. Sport Center Putumayo",
+          "awayTeam": "C.D. Camilo Torres de Popayán",
+          "result": "1-4",
+          "homeScore": 1,
+          "awayScore": 4
+        },
+        {
+          "time": "16:45",
+          "homeTeam": "Club Real Madrid de Tumaco",
+          "awayTeam": "JAC. La Rioja Neiva",
+          "result": "1-0",
+          "homeScore": 1,
+          "awayScore": 0
+        }
+      ]
+    },
+    {
+      "date": "2025-09-25",
+      "venue": "Estadio Municipal Fenelón Ordóñez",
+      "games": [
+        {
+          "time": "08:00",
+          "homeTeam": "Deportivo Caucanos Popayán",
+          "awayTeam": "Club Nuevos Talentos Orito",
+          "result": "4-0",
+          "homeScore": 4,
+          "awayScore": 0
+        },
+        {
+          "time": "09:15",
+          "homeTeam": "Club Eder Rúales de Ipiales",
+          "awayTeam": "Real Sociedad F.C. Popayán",
+          "result": "1-0",
+          "homeScore": 1,
+          "awayScore": 0
+        },
+        {
+          "time": "10:30",
+          "homeTeam": "RADI F.C. Ipiales",
+          "awayTeam": "Atlético F.C. Florencia",
+          "result": "0-1",
+          "homeScore": 0,
+          "awayScore": 1
+        },
+        {
+          "time": "11:45",
+          "homeTeam": "Elite Independiente Popayán",
+          "awayTeam": "La Plata F.C. M. La Plata",
+          "result": "2-2",
+          "homeScore": 2,
+          "awayScore": 2
+        },
+        {
+          "time": "13:00",
+          "homeTeam": "FM de fútbol La Cruz Nariño",
+          "awayTeam": "Club D. Reyes F.C. de Neiva",
+          "result": "0-1",
+          "homeScore": 0,
+          "awayScore": 1
+        }
+      ]
+    },
+    {
+      "date": "2025-09-26",
+      "venue": "Estadio Municipal Fenelón Ordóñez",
+      "stage": "Octavos de Final",
+      "games": [
+        {
+          "time": "08:00",
+          "homeTeam": "C.D. Camilo Torres de Popayán",
+          "awayTeam": "Estudiantes F.C. de Pasto",
+          "result": "1-1",
+          "homeScore": 1,
+          "awayScore": 1
+        },
+        {
+          "time": "09:20",
+          "homeTeam": "Club Eder Rúales de Ipiales",
+          "awayTeam": "Club Nuevos Talentos Orito",
+          "result": "1-3",
+          "homeScore": 1,
+          "awayScore": 3
+        },
+        {
+          "time": "10:40",
+          "homeTeam": "C.D. León F.C. de Popayán",
+          "awayTeam": "Academia de fútbol Pumas de Mocoa",
+          "result": "0-3",
+          "homeScore": 0,
+          "awayScore": 3
+        },
+        {
+          "time": "12:00",
+          "homeTeam": "Sporting Caquetá",
+          "awayTeam": "JAC. La Rioja Neiva",
+          "result": "2-0",
+          "homeScore": 2,
+          "awayScore": 0
+        },
+        {
+          "time": "13:20",
+          "homeTeam": "CSD Aston Huila Neiva",
+          "awayTeam": "RADI F.C. Ipiales",
+          "result": "2-0",
+          "homeScore": 2,
+          "awayScore": 0
+        },
+        {
+          "time": "14:40",
+          "homeTeam": "Club D. Reyes F.C. de Neiva",
+          "awayTeam": "C.D. Sport Cauca Popayán",
+          "result": "0-0",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "time": "16:00",
+          "homeTeam": "Deportivo Caucanos Popayán",
+          "awayTeam": "ALDRIN F.C. Tumaco",
+          "result": "0-0",
+          "homeScore": 0,
+          "awayScore": 0
+        },
+        {
+          "time": "17:20",
+          "homeTeam": "Atlético F.C. de Florencia",
+          "awayTeam": "Club Real Madrid de Tumaco",
+          "result": "0-0",
+          "homeScore": 0,
+          "awayScore": 0
+        }
+      ]
+    },
+        {
+      "date": "2025-09-27",
+      "venue": "Estadio Municipal Fenelón Ordóñez",
+      "stage": "Cuartos de Final",
+      "games": [
+        {
+          "time": "10:00",
+          "homeTeam": "Estudiantes F.C. de Pasto",
+          "awayTeam": "Club Nuevos Talentos Orito",
+          "homeScore": 3,
+          "awayScore": 0,
+          "result": "3-0"
+        },
+        {
+          "time": "11:20",
+          "homeTeam": "A. de Fútbol Pumas de Mocoa",
+          "awayTeam": "Sporting Caquetá",
+          "homeScore": 0,
+          "awayScore": 3,
+          "result": "0-3"
+        },
+        {
+          "time": "12:40",
+          "homeTeam": "CSD Aston Huila Neiva",
+          "awayTeam": "C.D. Sport Cauca Popayán",
+          "homeScore": 3,
+          "awayScore": 0,
+          "result": "3-0"
+        },
+        {
+          "time": "14:00",
+          "homeTeam": "Deportivo Caucanos Popayán",
+          "awayTeam": "Club Real Madrid de Tumaco",
+          "homeScore": 0,
+          "awayScore": 0,
+          "result": "0-0"
         }
       ]
     }

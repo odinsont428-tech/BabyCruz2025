@@ -3,21 +3,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Festival BabyFútbol Colanta 2025" currentPage="home">
-  <!-- Hero Section -->
+  <!-- Hero Section (igual que antes) -->
   <section class="relative bg-gradient-to-br from-primary-600 via-primary-500 to-secondary-600 text-white overflow-hidden">
     <div class="absolute inset-0 bg-black opacity-40"></div>
     <div class="absolute inset-0 bg-[url('https://res.cloudinary.com/ddmutduxp/image/upload/v1758635875/548270995_4239613626315683_4299486410566407612_n_bwfjaa.webp?auto=compress&cs=tinysrgb&w=1920')] bg-cover bg-center mix-blend-overlay"></div>
-    
+
     <div class="relative max-w-7xl mx-auto px-4 py-24 sm:px-6 lg:px-8">
       <div class="text-center">
         <img src="/logoBabyCruz.webp" alt="Logo Festival BabyFútbol" class="mx-auto h-52 w-auto mb-8">
-        <p class="text-xl md:text-2xl mb-4 text-gray-200">
-          Zonal Masculino Sur Occidente de Colombia
-        </p>
-        <p class="text-lg mb-8 text-gray-300">
-          La Cruz, Nariño • 19 al 28 de Septiembre de 2025
-        </p>
-        
+        <p class="text-xl md:text-2xl mb-4 text-gray-200">Zonal Masculino Sur Occidente de Colombia</p>
+        <p class="text-lg mb-8 text-gray-300">La Cruz, Nariño • 19 al 28 de Septiembre de 2025</p>
+
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="/programacion" class="inline-flex items-center px-8 py-3 bg-white text-primary-600 font-semibold rounded-xl shadow-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105">
             Ver Programación
@@ -30,7 +26,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- Info Cards Section -->
+  <!-- Info Cards (igual que antes) -->
   <section class="py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -68,7 +64,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <p class="text-gray-600">Estadio Municipal<br>Fenelón Ordóñez</p>
         </div>
 
-        <!-- Premio -->
+        <!-- Clasificación -->
         <div class="bg-white rounded-2xl shadow-neomorphism p-6 text-center hover:shadow-lg transition-shadow duration-300">
           <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -82,97 +78,116 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- Próximos Partidos -->
+  <!-- Grupos del Torneo (mejorado, robusto y responsivo) -->
   <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">
-          Próximos Partidos
-        </h2>
-        <p class="text-xl text-gray-600">
-          No te pierdas la acción del festival
-        </p>
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">Grupos del Torneo</h2>
+        <p class="text-xl text-gray-600">Descubre los equipos que participarán en esta edición</p>
       </div>
 
-      <div id="upcoming-matches" class="grid gap-6">
-        <!-- Los partidos se cargarán dinámicamente -->
-      </div>
-
-      <div class="text-center mt-8">
-        <a href="/programacion" class="inline-flex items-center px-6 py-3 bg-primary-600 text-white font-semibold rounded-xl hover:bg-primary-700 transition-colors">
-          Ver Programación Completa
-          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </a>
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3" id="groups-container" aria-live="polite">
+        <!-- Se llenará dinámicamente -->
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const groupsContainer = document.getElementById("groups-container");
+      if (!groupsContainer) return;
+
+      try {
+        const res = await fetch("/data/groups.json");
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+
+        // seguridad: estructura mínima esperada
+        if (!data.groups || !data.teams) {
+          throw new Error("El JSON debe contener 'groups' y 'teams'");
+        }
+
+        groupsContainer.innerHTML = ""; // limpiar
+        const fragment = document.createDocumentFragment();
+
+        data.groups.forEach(group => {
+          // Card del grupo
+          const groupCard = document.createElement("div");
+          groupCard.className = "bg-gray-50 rounded-2xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow";
+
+          // Título del grupo (incluye número de equipos)
+          const title = document.createElement("h3");
+          title.className = "text-xl font-bold text-primary-600 mb-4 text-center";
+          title.textContent = `${group.name} · ${Array.isArray(group.teams) ? group.teams.length : 0} equipos`;
+
+          // Grid / wrap de equipos — usa flex-wrap para cualquier cantidad
+          const teamGrid = document.createElement("div");
+          teamGrid.className = "flex flex-wrap justify-center items-center gap-4";
+
+          // Por cada teamKey, hacemos búsqueda segura en data.teams
+          (Array.isArray(group.teams) ? group.teams : []).forEach(teamKey => {
+            let team = data.teams[teamKey];
+
+            if (!team) {
+              // si falta el teamKey, ponemos placeholder y avisamos en consola (no rompe el render)
+              console.warn(`[groups.json] teamKey no encontrado: ${teamKey}`);
+              team = {
+                name: String(teamKey).replace(/[-_]/g, " "),
+                escudo: "/img/escudo-placeholder.svg" // ajusta la ruta a tu placeholder en /public
+              };
+            }
+
+            const teamCard = document.createElement("div");
+            teamCard.className = "flex flex-col items-center text-center bg-white rounded-xl shadow p-3 hover:scale-105 transition-transform w-28";
+
+            const img = document.createElement("img");
+            img.src = team.escudo;
+            img.alt = team.name;
+            img.loading = "lazy";
+            img.decoding = "async";
+            img.className = "w-14 h-14 sm:w-16 sm:h-16 object-contain mb-2 rounded-full";
+            // fallback si imagen falla
+            img.onerror = () => {
+              img.onerror = null;
+              img.src = "/img/escudo-placeholder.svg";
+            };
+
+            const name = document.createElement("p");
+            name.className = "text-xs font-medium text-gray-700";
+            name.textContent = team.name;
+
+            teamCard.appendChild(img);
+            teamCard.appendChild(name);
+            teamGrid.appendChild(teamCard);
+          });
+
+          groupCard.appendChild(title);
+          groupCard.appendChild(teamGrid);
+          fragment.appendChild(groupCard);
+        });
+
+        groupsContainer.appendChild(fragment);
+      } catch (err) {
+        console.error("Error cargando grupos:", err);
+        groupsContainer.innerHTML = `
+          <div class="text-center text-red-600 py-8">
+            Error cargando grupos. Revisa la consola y /data/groups.json.
+          </div>
+        `;
+      }
+    });
+  </script>
+
+  <!-- CTA Section (igual que antes) -->
   <section class="py-16 bg-gradient-to-r from-primary-600 to-secondary-600 text-white">
     <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl md:text-4xl font-display font-bold mb-6">
-        ¡Sigue toda la acción del torneo!
-      </h2>
-      <p class="text-xl mb-8 text-gray-200">
-        Mantente actualizado con resultados, galerías de fotos y más
-      </p>
-      
+      <h2 class="text-3xl md:text-4xl font-display font-bold mb-6">¡Sigue toda la acción del torneo!</h2>
+      <p class="text-xl mb-8 text-gray-200">Mantente actualizado con resultados, galerías de fotos y más</p>
+
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/galerias" class="inline-flex items-center px-8 py-3 bg-white text-primary-600 font-semibold rounded-xl hover:bg-gray-100 transition-colors">
-          Ver Galerías
-        </a>
-        <a href="/goleadores" class="inline-flex items-center px-8 py-3 bg-primary-800 text-white font-semibold rounded-xl hover:bg-primary-900 transition-colors">
-          Tabla de Goleadores
-        </a>
+        <a href="/galerias" class="inline-flex items-center px-8 py-3 bg-white text-primary-600 font-semibold rounded-xl hover:bg-gray-100 transition-colors">Ver Galerías</a>
+        <a href="/goleadores" class="inline-flex items-center px-8 py-3 bg-primary-800 text-white font-semibold rounded-xl hover:bg-primary-900 transition-colors">Tabla de Goleadores</a>
       </div>
     </div>
   </section>
-</BaseLayout>
-
-<script>
-  document.addEventListener('DOMContentLoaded', async () => {
-    try {
-      const response = await fetch('/data/matches.json');
-      const data = await response.json();
-      
-      // Obtener los próximos 3 partidos
-      const upcomingMatches = data.matches.slice(0, 2);
-      
-      const container = document.getElementById('upcoming-matches');
-      if (container && upcomingMatches.length > 0) {
-        container.innerHTML = upcomingMatches.map(matchDay => `
-          <div class="bg-gray-50 rounded-2xl p-6">
-            <div class="text-center mb-4">
-              <h3 class="text-xl font-display font-bold text-gray-900">${new Date(matchDay.date).toLocaleDateString('es-CO', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</h3>
-              <p class="text-gray-600">${matchDay.venue}</p>
-            </div>
-            <div class="space-y-4">
-              ${matchDay.games.slice(0, 3).map(game => `
-                <div class="flex items-center justify-between bg-white rounded-lg p-4 shadow-sm">
-                  <div class="flex-1 text-center">
-                    <p class="font-semibold text-gray-900">${game.homeTeam}</p>
-                  </div>
-                  <div class="px-4">
-                    <div class="text-center">
-                      <span class="text-sm text-gray-500">${game.time}</span>
-                      <div class="text-lg font-bold text-primary-600">VS</div>
-                      <span class="text-xs bg-${game.group === 'A' ? 'red' : game.group === 'B' ? 'blue' : game.group === 'C' ? 'green' : game.group === 'D' ? 'yellow' : game.group === 'E' ? 'purple' : 'pink'}-100 text-${game.group === 'A' ? 'red' : game.group === 'B' ? 'blue' : game.group === 'C' ? 'green' : game.group === 'D' ? 'yellow' : game.group === 'E' ? 'purple' : 'pink'}-800 px-2 py-1 rounded-full">Grupo ${game.group}</span>
-                    </div>
-                  </div>
-                  <div class="flex-1 text-center">
-                    <p class="font-semibold text-gray-900">${game.awayTeam}</p>
-                  </div>
-                </div>
-              `).join('')}
-            </div>
-          </div>
-        `).join('');
-      }
-    } catch (error) {
-      console.error('Error loading matches:', error);
-    }
-  });
-</script>
 </BaseLayout>

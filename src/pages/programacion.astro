@@ -3,154 +3,225 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Programación - Festival BabyFútbol Colanta 2025" currentPage="programacion">
-  <div class="py-8 bg-white">
+  <div class="py-8 bg-gray-50 min-h-screen">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Header -->
-      <div class="text-center mb-12">
-        <h1 class="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-4">
+      <div class="text-center mb-8">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-gray-900 mb-2">
           Programación del Torneo
         </h1>
-        <p class="text-xl text-gray-600">
+        <p class="text-sm sm:text-base text-gray-600">
           Consulta todos los partidos del Festival BabyFútbol Colanta 2025
         </p>
       </div>
 
-      <!-- Filter Buttons -->
-      <div class="flex flex-wrap justify-center gap-2 mb-8" id="date-filter">
-        <!-- Los botones de filtro se cargarán dinámicamente -->
+      <!-- Filters -->
+      <div class="flex flex-wrap justify-center gap-2 mb-6" id="date-filter" role="toolbar" aria-label="Filtros por fecha">
+        <!-- Botones dinámicos -->
       </div>
 
-      <!-- Matches Container -->
-      <div id="matches-container" class="space-y-8">
-        <!-- Los partidos se cargarán aquí -->
+      <!-- Matches -->
+      <div id="matches-container" class="space-y-6">
+        <!-- Contenido dinámico -->
       </div>
     </div>
   </div>
 </BaseLayout>
 
 <script>
-  document.addEventListener('DOMContentLoaded', async () => {
-    try {
-      const response = await fetch('/data/matches.json');
-      const data = await response.json();
-      
-      const dateFilter = document.getElementById('date-filter');
-      const matchesContainer = document.getElementById('matches-container');
-      
-      if (!dateFilter || !matchesContainer) return;
+/*
+  Frontend para renderizar matches.json con:
+  - stage (por día) opcional
+  - penalties (object: {home,away} o flat: penaltiesHome/penaltiesAway) opcional
+  - si no existen, no se muestran
+  - responsividad mejorada: mobile-first, grid en desktop
+*/
 
-      // Crear botones de filtro por fecha
-      const allDates = data.matches.map(match => match.date);
-      
-      // Botón para mostrar todos
-      const allButton = document.createElement('button');
-      allButton.className = 'px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors filter-btn active';
-      allButton.textContent = 'Todas las fechas';
-      allButton.dataset.date = 'all';
-      dateFilter.appendChild(allButton);
-      
-      // Botones para cada fecha específica
-      allDates.forEach(date => {
-        const button = document.createElement('button');
-        button.className = 'px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors filter-btn';
-        button.textContent = new Date(date).toLocaleDateString('es-CO', { 
-          weekday: 'short', 
-          month: 'short', 
-          day: 'numeric' 
+document.addEventListener('DOMContentLoaded', async () => {
+  const dateFilter = document.getElementById('date-filter');
+  const matchesContainer = document.getElementById('matches-container');
+
+  if (!dateFilter || !matchesContainer) return;
+
+  // Utility: escape minimal HTML
+  const esc = (s='') => String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
+
+  try {
+    const response = await fetch('/data/matches.json');
+    if (!response.ok) throw new Error('No se pudo cargar /data/matches.json');
+    const data = await response.json();
+
+    // extrae y ordena fechas únicas
+    const dates = Array.from(new Set((data.matches || []).map(m => m.date))).sort((a,b) => new Date(a) - new Date(b));
+
+    // crea botón 'Todas las fechas'
+    const addFilterBtn = (label, dateKey, active=false) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'filter-btn px-3 py-1 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-offset-1';
+      btn.dataset.date = dateKey;
+      if (active) btn.classList.add('bg-primary-600','text-white');
+      else btn.classList.add('bg-white','text-gray-700','shadow-sm','hover:bg-gray-50');
+      btn.textContent = label;
+      return btn;
+    };
+
+    dateFilter.appendChild(addFilterBtn('Todas las fechas', 'all', true));
+    dates.forEach(d => {
+      const label = new Date(d).toLocaleDateString('es-CO', { weekday: 'short', month: 'short', day: 'numeric' });
+      dateFilter.appendChild(addFilterBtn(label, d));
+    });
+
+    // Helper: badge group
+    const groupClass = (g) => {
+      if (!g) return 'hidden';
+      const map = { A:'bg-red-100 text-red-800', B:'bg-blue-100 text-blue-800', C:'bg-green-100 text-green-800',
+                    D:'bg-yellow-100 text-yellow-800', E:'bg-purple-100 text-purple-800', F:'bg-pink-100 text-pink-800' };
+      return map[g] || 'bg-gray-100 text-gray-800';
+    };
+
+    // render
+    function renderMatches(selectedDate='all') {
+      const days = selectedDate === 'all' ? (data.matches || []) : (data.matches || []).filter(d => d.date === selectedDate);
+      // ordenar por fecha y dentro por hora si existe
+      days.sort((a,b) => new Date(a.date) - new Date(b.date));
+
+      const html = days.map(day => {
+        const stageHtml = day.stage ? `<div class="ml-2 text-xs font-semibold inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800">Fase: ${esc(day.stage)}</div>` : '';
+        const games = (day.games || []).slice().sort((a,b) => {
+          if (!a.time) return 1; if (!b.time) return -1;
+          return a.time.localeCompare(b.time);
         });
-        button.dataset.date = date;
-        dateFilter.appendChild(button);
-      });
-      
-      // Función para mostrar partidos
-      function showMatches(selectedDate = 'all') {
-        const matchesToShow = selectedDate === 'all' ? data.matches : data.matches.filter(match => match.date === selectedDate);
-        
-        matchesContainer.innerHTML = matchesToShow.map(matchDay => `
-          <div class="bg-white rounded-2xl shadow-neomorphism overflow-hidden">
-            <!-- Header del día -->
-            <div class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white p-6">
-              <h2 class="text-2xl font-display font-bold">
-                ${new Date(matchDay.date).toLocaleDateString('es-CO', { 
-                  weekday: 'long', 
-                  year: 'numeric', 
-                  month: 'long', 
-                  day: 'numeric' 
-                })}
-              </h2>
-              <p class="text-primary-100">${matchDay.venue}</p>
-            </div>
-            
-            <!-- Lista de partidos -->
-            <div class="divide-y divide-gray-200">
-              ${matchDay.games.map(game => `
-                <div class="p-6 hover:bg-gray-50 transition-colors">
-                  <div class="flex items-center justify-between">
-                    <!-- Equipo local -->
-                    <div class="flex-1 text-right pr-4">
-                      <h3 class="font-semibold text-gray-900 text-lg">${game.homeTeam}</h3>
-                    </div>
-                    
-                    <!-- Información central -->
-                    <div class="flex-shrink-0 text-center px-6">
-                      <div class="bg-primary-100 rounded-lg px-4 py-2">
-                        <div class="text-2xl font-bold text-primary-600">VS</div>
-                        <div class="text-sm text-gray-600 mt-1">${game.time}</div>
-                        <div class="mt-2">
-                          <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full 
-                            ${game.group === 'A' ? 'bg-red-100 text-red-800' : 
-                              game.group === 'B' ? 'bg-blue-100 text-blue-800' :
-                              game.group === 'C' ? 'bg-green-100 text-green-800' :
-                              game.group === 'D' ? 'bg-yellow-100 text-yellow-800' :
-                              game.group === 'E' ? 'bg-purple-100 text-purple-800' :
-                              'bg-pink-100 text-pink-800'}">
-                            Grupo ${game.group}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <!-- Equipo visitante -->
-                    <div class="flex-1 text-left pl-4">
-                      <h3 class="font-semibold text-gray-900 text-lg">${game.awayTeam}</h3>
-                    </div>
-                  </div>
+
+        const gamesHtml = games.map(g => {
+          // detecta scores numéricos
+          const homeScore = Number.isFinite(Number(g.homeScore)) ? Number(g.homeScore) : undefined;
+          const awayScore = Number.isFinite(Number(g.awayScore)) ? Number(g.awayScore) : undefined;
+          const hasScore = typeof homeScore === 'number' && typeof awayScore === 'number';
+
+          // penalties (object o planos)
+          const penHome = (g.penalties && Number.isFinite(Number(g.penalties.home))) ? Number(g.penalties.home) : (Number.isFinite(Number(g.penaltiesHome)) ? Number(g.penaltiesHome) : undefined);
+          const penAway = (g.penalties && Number.isFinite(Number(g.penalties.away))) ? Number(g.penalties.away) : (Number.isFinite(Number(g.penaltiesAway)) ? Number(g.penaltiesAway) : undefined);
+          const hasPen = typeof penHome === 'number' && typeof penAway === 'number';
+
+          // extraTime planos u objeto (opcional, no se resalta ganador por ET)
+          const etHome = (g.extraTime && Number.isFinite(Number(g.extraTime.home))) ? Number(g.extraTime.home) : (Number.isFinite(Number(g.extraTimeHome)) ? Number(g.extraTimeHome) : undefined);
+          const etAway = (g.extraTime && Number.isFinite(Number(g.extraTime.away))) ? Number(g.extraTime.away) : (Number.isFinite(Number(g.extraTimeAway)) ? Number(g.extraTimeAway) : undefined);
+          const hasET = typeof etHome === 'number' && typeof etAway === 'number';
+
+          // determina ganador (basado en score normal; si empate y hay penales, los penales definen ganador visual)
+          let homeWinner = false, awayWinner = false, draw = false;
+          if (hasScore) {
+            if (homeScore > awayScore) homeWinner = true;
+            else if (homeScore < awayScore) awayWinner = true;
+            else draw = true;
+          }
+          // si hay penales y el partido estaba empatado, definimos por penales
+          if (hasPen && draw) {
+            if (penHome > penAway) { homeWinner = true; awayWinner = false; draw = false; }
+            else if (penAway > penHome) { awayWinner = true; homeWinner = false; draw = false; }
+          }
+
+          // clases responsive: mobile show stacked, md show grid 3 cols
+          const homeName = `<div class="${homeWinner ? 'font-extrabold text-primary-700' : 'text-gray-900'} truncate">${esc(g.homeTeam)}</div>`;
+          const awayName = `<div class="${awayWinner ? 'font-extrabold text-primary-700' : 'text-gray-900'} truncate">${esc(g.awayTeam)}</div>`;
+
+          // centro: score o time + ET/Pen
+          let center = '';
+          if (hasScore) {
+            center += `<div class="text-lg sm:text-2xl font-bold">${homeScore} <span class="mx-1 sm:mx-2">-</span> ${awayScore}</div>`;
+            if (hasET) center += `<div class="text-xs text-gray-500 mt-1">(ET ${etHome}-${etAway})</div>`;
+            if (hasPen) center += `<div class="text-xs text-gray-500 mt-1">(Pen. ${penHome}-${penAway})</div>`;
+            if (g.result && typeof g.result === 'string') center += `<div class="text-xs text-gray-400 mt-1">${esc(g.result)}</div>`;
+          } else {
+            center = `<div class="text-sm text-gray-600">${esc(g.time ?? 'Hora por confirmar')}</div>`;
+          }
+
+          // badge grupo (si existe)
+          const gBadge = g.group ? `<span class="inline-block text-xs px-2 py-0.5 rounded-full ${groupClass(g.group)}">Grupo ${esc(g.group)}</span>` : '';
+
+          return `
+            <article class="bg-white rounded-xl shadow-sm overflow-hidden">
+              <div class="p-4 md:p-6 grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center gap-3 md:gap-6">
+                <!-- home -->
+                <div class="text-right md:text-right md:pr-4">
+                  <div class="text-sm text-gray-500 hidden md:block">${gBadge}</div>
+                  ${homeName}
+                  <div class="text-xs text-gray-500 mt-1 md:hidden">${esc(g.group ?? '')}</div>
                 </div>
-              `).join('')}
+
+                <!-- center (score/time) -->
+                <div class="flex flex-col items-center justify-center">
+                  <div class="bg-primary-50 px-3 py-2 rounded-lg text-center min-w-[90px]">
+                    ${center}
+                  </div>
+                  <div class="text-xs text-gray-400 mt-2 hidden md:block">${esc(g.venue ?? '')}</div>
+                </div>
+
+                <!-- away -->
+                <div class="text-left md:pl-4">
+                  ${awayName}
+                  <div class="text-xs text-gray-500 mt-1 hidden md:block">${esc(g.group ?? '')}</div>
+                </div>
+              </div>
+            </article>
+          `;
+        }).join('');
+
+        return `
+          <section class="bg-transparent">
+            <header class="mb-3">
+              <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                <div>
+                  <h2 class="text-lg sm:text-xl font-semibold text-gray-800">
+                    ${new Date(day.date).toLocaleDateString('es-CO', { weekday:'long', year:'numeric', month:'long', day:'numeric' })}
+                  </h2>
+                  <div class="text-sm text-gray-500">${esc(day.venue ?? '')}</div>
+                </div>
+                <div class="flex items-center gap-2">
+                  ${stageHtml}
+                </div>
+              </div>
+            </header>
+
+            <div class="space-y-3">
+              ${gamesHtml || `<div class="p-4 text-center text-gray-500 bg-white rounded-lg shadow-sm">No hay partidos registrados.</div>`}
             </div>
-          </div>
-        `).join('');
-      }
-      
-      // Mostrar todos los partidos inicialmente
-      showMatches();
-      
-      // Event listeners para los botones de filtro
-      dateFilter.addEventListener('click', (e) => {
-        if (e.target.classList.contains('filter-btn')) {
-          // Remover clase active de todos los botones
-          dateFilter.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.classList.remove('active', 'bg-primary-600', 'text-white');
-            btn.classList.add('bg-gray-200', 'text-gray-700');
-          });
-          
-          // Agregar clase active al botón clickeado
-          e.target.classList.add('active', 'bg-primary-600', 'text-white');
-          e.target.classList.remove('bg-gray-200', 'text-gray-700');
-          
-          // Mostrar partidos filtrados
-          showMatches(e.target.dataset.date);
-        }
-      });
-      
-    } catch (error) {
-      console.error('Error loading matches:', error);
-      document.getElementById('matches-container').innerHTML = `
-        <div class="text-center py-12">
-          <p class="text-red-600">Error al cargar la programación. Por favor, intenta nuevamente.</p>
-        </div>
-      `;
+          </section>
+        `;
+      }).join('');
+
+      matchesContainer.innerHTML = html || `<p class="text-center text-gray-500">No hay datos.</p>`;
     }
-  });
+
+    // init render
+    renderMatches();
+
+    // filtro por fecha (delegation)
+    dateFilter.addEventListener('click', (ev) => {
+      const btn = ev.target.closest('.filter-btn');
+      if (!btn) return;
+      // reset visual
+      dateFilter.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.remove('bg-primary-600','text-white');
+        b.classList.add('bg-white','text-gray-700');
+      });
+      btn.classList.remove('bg-white','text-gray-700');
+      btn.classList.add('bg-primary-600','text-white');
+      renderMatches(btn.dataset.date);
+    });
+
+    // mobile: keyboard accessibility for buttons (enter/space)
+    dateFilter.addEventListener('keydown', (ev) => {
+      if (ev.key === 'Enter' || ev.key === ' ') {
+        const btn = ev.target.closest('.filter-btn');
+        if (btn) btn.click();
+      }
+    });
+
+  } catch (err) {
+    console.error('Error cargando matches:', err);
+    matchesContainer.innerHTML = `<div class="p-6 text-center text-red-600">Error al cargar la programación. Revisa consola.</div>`;
+  }
+});
 </script>
-</BaseLayout>

@@ -1,109 +1,192 @@
 {
+  "teams": {
+    "club-real-madrid-de-tumaco": {
+      "name": "Club Real Madrid de Tumaco",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981411/19_alaltg.webp"
+    },
+    "cd-camilo-torres-de-popayan": {
+      "name": "C.D. Camilo Torres de Popayán",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981409/7_p5prsa.webp"
+    },
+    "cd-sport-center-putumayo": {
+      "name": "C.D. Sport Center Putumayo",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981410/12_cswxso.webp"
+    },
+    "jac-la-rioja-neiva": {
+      "name": "JAC. La Rioja Neiva",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981412/25_vvtofg.webp"
+    },
+    "cd-leon-fc-de-popayan": {
+      "name": "C.D. León F.C. de Popayán",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981409/8_b9txud.webp"
+    },
+    "aldrin-fc-tumaco": {
+      "name": "ALDRIN F.C. Tumaco",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981411/20_jvgbqz.webp"
+    },
+    "pumas-de-mocoa": {
+      "name": "A. de fútbol Pumas de Mocoa",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981409/4_twwvj7.webp"
+    },
+    "calidad-fc-pitalito": {
+      "name": "Calidad F.C. Pitalito",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981412/23_hnocuf.webp"
+    },
+    "csd-aston-huila-neiva": {
+      "name": "CSD Aston Huila Neiva",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981412/24_hmhbqq.webp"
+    },
+    "estudiantes-fc-pasto": {
+      "name": "Estudiantes F.C. Pasto",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981410/15_lwu36a.webp"
+    },
+    "cd-sport-cauca-popayan": {
+      "name": "C.D. Sport Cauca Popayán",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981410/11_s8pcbi.webp"
+    },
+    "tierra-talentos-puerto-asis": {
+      "name": "Tierra de Talentos Puerto Asís",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981409/1_vln1qi.webp"
+    },
+    "deportivo-caucanos-popayan": {
+      "name": "Deportivo Caucanos Popayán",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981409/5_go5zar.webp"
+    },
+    "nuevos-talentos-orito": {
+      "name": "Club Nuevos Talentos Orito",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981409/3_eingdb.webp"
+    },
+    "deportivo-pasto": {
+      "name": "Deportivo Pasto",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981412/21_t9dgu0.webp"
+    },
+    "promesas-fc-neiva": {
+      "name": "Promesas F.C. Neiva",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981412/22_eladpf.webp"
+    },
+    "atletico-fc-florencia": {
+      "name": "Atlético F.C. Florencia",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981410/14_jxvkx7.webp"
+    },
+    "radi-fc-ipiales": {
+      "name": "RADI F.C. Ipiales",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981411/18_td3lzw.webp"
+    },
+    "la-plata-fc-m-la-plata": {
+      "name": "La Plata F.C.",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981410/9_g0gvcd.webp"
+    },
+    "elite-independiente-popayan": {
+      "name": "Elite Independiente Popayán",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981409/6_ifgwcx.webp"
+    },
+    "club-d-reyes-fc-de-neiva": {
+      "name": "Club D. Reyes F.C. de Neiva",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981410/10_rgdd6q.webp"
+    },
+    "sporting-caqueta": {
+      "name": "Sporting Caquetá",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981410/13_nouisb.webp"
+    },
+    "club-eder-ruales-de-ipiales": {
+      "name": "Club Eder Rúales de Ipiales",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981411/17_vygtsu.webp"
+    },
+    "fm-futbol-la-cruz-narino": {
+      "name": "FM de fútbol La Cruz Nariño",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981410/16_ls6ddq.webp"
+    },
+    "real-sociedad-fc-popayan": {
+      "name": "Real Sociedad F.C. Popayán",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981410/16_ls6ddq.webp"
+    }
+  },
   "standings": [
     {
       "group": "A",
       "teams": [
-        {
-          "position": 1,
-          "team": "Club Real Madrid de Tumaco",
-          "pj": 3,
-          "pg": 2,
-          "pe": 1,
-          "pp": 0,
-          "gf": 8,
-          "gc": 3,
-          "dif": 5,
-          "pts": 7
-        },
-        {
-          "position": 2,
-          "team": "C.D. Camilo Torres de Popayán",
-          "pj": 3,
-          "pg": 2,
-          "pe": 0,
-          "pp": 1,
-          "gf": 6,
-          "gc": 4,
-          "dif": 2,
-          "pts": 6
-        },
-        {
-          "position": 3,
-          "team": "C.D. Sport Center Putumayo",
-          "pj": 3,
-          "pg": 1,
-          "pe": 1,
-          "pp": 1,
-          "gf": 4,
-          "gc": 5,
-          "dif": -1,
-          "pts": 4
-        },
-        {
-          "position": 4,
-          "team": "JAC. La Rioja Neiva",
-          "pj": 3,
-          "pg": 0,
-          "pe": 0,
-          "pp": 3,
-          "gf": 2,
-          "gc": 8,
-          "dif": -6,
-          "pts": 0
-        }
+        { "position": 1, "teamId": "club-real-madrid-de-tumaco", "pj": 3, "pg": 2, "pe": 1, "pp": 0, "gf": 8, "gc": 3, "dif": 5, "pts": 7 },
+        { "position": 2, "teamId": "cd-camilo-torres-de-popayan", "pj": 3, "pg": 2, "pe": 0, "pp": 1, "gf": 6, "gc": 4, "dif": 2, "pts": 6 },
+        { "position": 3, "teamId": "cd-sport-center-putumayo", "pj": 3, "pg": 1, "pe": 1, "pp": 1, "gf": 4, "gc": 5, "dif": -1, "pts": 4 },
+        { "position": 4, "teamId": "jac-la-rioja-neiva", "pj": 3, "pg": 0, "pe": 0, "pp": 3, "gf": 2, "gc": 8, "dif": -6, "pts": 0 }
       ]
     },
     {
       "group": "B",
       "teams": [
-        {
-          "position": 1,
-          "team": "ALDRIN F.C. Tumaco",
-          "pj": 3,
-          "pg": 3,
-          "pe": 0,
-          "pp": 0,
-          "gf": 9,
-          "gc": 2,
-          "dif": 7,
-          "pts": 9
-        },
-        {
-          "position": 2,
-          "team": "Calidad F.C. Pitalito",
-          "pj": 3,
-          "pg": 2,
-          "pe": 0,
-          "pp": 1,
-          "gf": 7,
-          "gc": 4,
-          "dif": 3,
-          "pts": 6
-        },
-        {
-          "position": 3,
-          "team": "C.D. León F.C. de Popayán",
-          "pj": 3,
-          "pg": 1,
-          "pe": 0,
-          "pp": 2,
-          "gf": 3,
-          "gc": 6,
-          "dif": -3,
-          "pts": 3
-        },
-        {
-          "position": 4,
-          "team": "Academia de fútbol Pumas de Mocoa",
-          "pj": 3,
-          "pg": 0,
-          "pe": 0,
-          "pp": 3,
-          "gf": 1,
-          "gc": 8,
-          "dif": -7,
-          "pts": 0
-        }
+        { "position": 1, "teamId": "cd-leon-fc-de-popayan", "pj": 3, "pg": 1, "pe": 2, "pp": 0, "gf": 4, "gc": 3, "dif": 1, "pts": 5 },
+        { "position": 2, "teamId": "aldrin-fc-tumaco", "pj": 3, "pg": 1, "pe": 2, "pp": 0, "gf": 1, "gc": 0, "dif": 1, "pts": 5 },
+        { "position": 3, "teamId": "pumas-de-mocoa", "pj": 3, "pg": 0, "pe": 3, "pp": 0, "gf": 3, "gc": 3, "dif": 0, "pts": 3 },
+        { "position": 4, "teamId": "calidad-fc-pitalito", "pj": 3, "pg": 0, "pe": 1, "pp": 2, "gf": 2, "gc": 4, "dif": -2, "pts": 1 }
+      ]
+    },
+    {
+      "group": "C",
+      "teams": [
+        { "position": 1, "teamId": "csd-aston-huila-neiva", "pj": 3, "pg": 2, "pe": 1, "pp": 0, "gf": 4, "gc": 1, "dif": 3, "pts": 7 },
+        { "position": 2, "teamId": "estudiantes-fc-pasto", "pj": 3, "pg": 2, "pe": 0, "pp": 1, "gf": 8, "gc": 3, "dif": 5, "pts": 6 },
+        { "position": 3, "teamId": "cd-sport-cauca-popayan", "pj": 3, "pg": 1, "pe": 1, "pp": 1, "gf": 2, "gc": 2, "dif": 0, "pts": 4 },
+        { "position": 4, "teamId": "tierra-talentos-puerto-asis", "pj": 3, "pg": 0, "pe": 0, "pp": 3, "gf": 1, "gc": 9, "dif": -8, "pts": 0 }
+      ]
+    },
+    {
+      "group": "D",
+      "teams": [
+        { "position": 1, "teamId": "deportivo-caucanos-popayan", "pj": 3, "pg": 2, "pe": 1, "pp": 0, "gf": 5, "gc": 0, "dif": 5, "pts": 7 },
+        { "position": 2, "teamId": "nuevos-talentos-orito", "pj": 3, "pg": 1, "pe": 1, "pp": 1, "gf": 3, "gc": 6, "dif": -3, "pts": 4 },
+        { "position": 3, "teamId": "deportivo-pasto", "pj": 3, "pg": 0, "pe": 2, "pp": 1, "gf": 2, "gc": 3, "dif": -1, "pts": 2 },
+        { "position": 4, "teamId": "promesas-fc-neiva", "pj": 3, "pg": 0, "pe": 2, "pp": 1, "gf": 0, "gc": 1, "dif": -1, "pts": 2 }
+      ]
+    },
+    {
+      "group": "E",
+      "teams": [
+        { "position": 1, "teamId": "atletico-fc-florencia", "pj": 3, "pg": 3, "pe": 0, "pp": 0, "gf": 7, "gc": 1, "dif": 6, "pts": 9 },
+        { "position": 2, "teamId": "radi-fc-ipiales", "pj": 3, "pg": 1, "pe": 1, "pp": 1, "gf": 1, "gc": 1, "dif": 0, "pts": 4 },
+        { "position": 3, "teamId": "la-plata-fc-m-la-plata", "pj": 3, "pg": 0, "pe": 2, "pp": 1, "gf": 2, "gc": 6, "dif": -4, "pts": 2 },
+        { "position": 4, "teamId": "elite-independiente-popayan", "pj": 3, "pg": 0, "pe": 1, "pp": 2, "gf": 3, "gc": 5, "dif": -2, "pts": 1 }
+      ]
+    },
+    {
+      "group": "F",
+      "teams": [
+        { "position": 1, "teamId": "club-d-reyes-fc-de-neiva", "pj": 4, "pg": 3, "pe": 0, "pp": 1, "gf": 8, "gc": 7, "dif": 1, "pts": 9 },
+        { "position": 2, "teamId": "sporting-caqueta", "pj": 4, "pg": 2, "pe": 2, "pp": 0, "gf": 6, "gc": 2, "dif": 4, "pts": 8 },
+        { "position": 3, "teamId": "club-eder-ruales-de-ipiales", "pj": 4, "pg": 2, "pe": 1, "pp": 1, "gf": 3, "gc": 3, "dif": 0, "pts": 7 },
+        { "position": 4, "teamId": "fm-futbol-la-cruz-narino", "pj": 4, "pg": 0, "pe": 2, "pp": 2, "gf": 0, "gc": 2, "dif": -2, "pts": 2 },
+        { "position": 5, "teamId": "real-sociedad-fc-popayan", "pj": 4, "pg": 0, "pe": 1, "pp": 3, "gf": 1, "gc": 4, "dif": -3, "pts": 1 }
+      ]
+    },
+    {
+      "group": "CLASIFICACIÓN TERCEROS",
+      "teams": [
+        { "position": "C", "teamId": "cd-sport-cauca-popayan", "pj": 3, "pg": 1, "pe": 1, "pp": 1, "gf": 2, "gc": 2, "dif": 0, "pts": 4 },
+        { "position": "A", "teamId": "jac-la-rioja-neiva", "pj": 3, "pg": 1, "pe": 1, "pp": 1, "gf": 2, "gc": 1, "dif": 1, "pts": 4 },
+        { "position": "B", "teamId": "pumas-de-mocoa", "pj": 3, "pg": 0, "pe": 3, "pp": 0, "gf": 3, "gc": 3, "dif": 0, "pts": 3 },
+        { "position": "E", "teamId": "la-plata-fc-m-la-plata", "pj": 3, "pg": 0, "pe": 2, "pp": 1, "gf": 2, "gc": 6, "dif": -4, "pts": 2 },
+        { "position": "D", "teamId": "deportivo-pasto", "pj": 3, "pg": 0, "pe": 2, "pp": 1, "gf": 2, "gc": 3, "dif": -1, "pts": 2 }
+      ]
+    },
+    {
+      "group": "CLASIFICACIÓN DE LOS OCHOS MEJORES MUNICIPIO DE LA CRUZ, NARIÑO",
+      "teams": [
+        { "position": 1, "teamId": "sporting-caqueta", "pj": 5, "pg": 3, "pe": 2, "pp": 0, "gf": 8, "gc": 2, "dif": 6, "pts": 11 },
+        { "position": 2, "teamId": "csd-aston-huila-neiva", "pj": 4, "pg": 3, "pe": 1, "pp": 0, "gf": 6, "gc": 1, "dif": 5, "pts": 10 },
+        { "position": 3, "teamId": "deportivo-caucanos-popayan", "pj": 4, "pg": 2, "pe": 1, "pp": 0, "gf": 5, "gc": 0, "dif": 5, "pts": 8 },
+        { "position": 4, "teamId": "club-real-madrid-de-tumaco", "pj": 4, "pg": 2, "pe": 1, "pp": 1, "gf": 5, "gc": 1, "dif": 4, "pts": 7 },
+        { "position": 5, "teamId": "nuevos-talentos-orito", "pj": 4, "pg": 2, "pe": 1, "pp": 1, "gf": 6, "gc": 7, "dif": -1, "pts": 7 },
+        { "position": 6, "teamId": "estudiantes-fc-pasto", "pj": 4, "pg": 2, "pe": 1, "pp": 1, "gf": 9, "gc": 4, "dif": 5, "pts": 7 },
+        { "position": 7, "teamId": "pumas-de-mocoa", "pj": 4, "pg": 1, "pe": 3, "pp": 0, "gf": 6, "gc": 3, "dif": 3, "pts": 6 },
+        { "position": 8, "teamId": "cd-sport-cauca-popayan", "pj": 4, "pg": 1, "pe": 2, "pp": 1, "gf": 2, "gc": 2, "dif": 0, "pts": 5 }
+      ]
+    },
+    {
+      "group": "CLASIFICACIÓN MEJORES CUATRO MUNICIPIO DE LA CRUZ NARIÑO",
+      "teams": [
+        { "position": 1, "teamId": "sporting-caqueta", "pj": 6, "pg": 4, "pe": 2, "pp": 0, "gf": 11, "gc": 2, "dif": 9, "pts": 14 },
+        { "position": 2, "teamId": "csd-aston-huila-neiva", "pj": 5, "pg": 4, "pe": 1, "pp": 0, "gf": 9, "gc": 1, "dif": 8, "pts": 13 },
+        { "position": 3, "teamId": "estudiantes-fc-pasto", "pj": 5, "pg": 3, "pe": 1, "pp": 1, "gf": 12, "gc": 4, "dif": 8, "pts": 10 },
+        { "position": 4, "teamId": "deportivo-caucanos-popayan", "pj": 5, "pg": 2, "pe": 3, "pp": 0, "gf": 5, "gc": 0, "dif": 5, "pts": 9 }
       ]
     }
   ]

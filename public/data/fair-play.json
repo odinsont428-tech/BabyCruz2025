@@ -1,39 +1,70 @@
 {
   "fairPlay": [
     {
-      "position": 1,
-      "team": "ALDRIN F.C. Tumaco",
+      "team": "Deportivo Caucanos de Popayán",
+      "player": "Samuel Ahumada Falla",
+      "yellowCards": 1,
+      "redCards": 0
+    },
+    {
+      "team": "Sporting de Caquetá",
+      "player": "Matías Roa López",
       "yellowCards": 2,
-      "redCards": 0,
-      "points": 18
+      "redCards": 0
     },
     {
-      "position": 2,
-      "team": "Club Real Madrid de Tumaco",
-      "yellowCards": 3,
-      "redCards": 0,
-      "points": 17
+      "team": "Estudiantes F.C. de Pasto",
+      "player": "Joel Sebastián Paz Díaz",
+      "yellowCards": 1,
+      "redCards": 0
     },
     {
-      "position": 3,
-      "team": "Calidad F.C. Pitalito",
-      "yellowCards": 4,
-      "redCards": 0,
-      "points": 16
+      "team": "Estudiantes F.C. de Pasto",
+      "player": "Santiago A. Bolaños G.",
+      "yellowCards": 2,
+      "redCards": 0
     },
     {
-      "position": 4,
-      "team": "Real Sociedad F.C. Popayán",
-      "yellowCards": 5,
-      "redCards": 1,
-      "points": 10
+      "team": "Estudiantes F.C. de Pasto",
+      "player": "Maicol Stiven Villota A.",
+      "yellowCards": 2,
+      "redCards": 0
     },
     {
-      "position": 5,
-      "team": "C.D. Camilo Torres de Popayán",
-      "yellowCards": 6,
-      "redCards": 1,
-      "points": 9
+      "team": "Estudiantes F.C. de Pasto",
+      "player": "Samuel David Gutiérrez P.",
+      "yellowCards": 1,
+      "redCards": 0
+    },
+    {
+      "team": "Estudiantes F.C. de Pasto",
+      "player": "Barra",
+      "yellowCards": 1,
+      "redCards": 0
+    },
+    {
+      "team": "CDS Aston Huila de Neiva",
+      "player": "Adrián Mauricio Salas S.",
+      "yellowCards": 2,
+      "redCards": 0
+    },
+    {
+      "team": "CDS Aston Huila de Neiva",
+      "player": "Thiago Perdomo Fierro",
+      "yellowCards": 1,
+      "redCards": 0
+    },
+    {
+      "team": "Estudiantes F.C. de Pasto",
+      "player": "Joel Sebastián Paz Díaz",
+      "yellowCards": 0,
+      "redCards": 1
+    },
+    {
+      "team": "Estudiantes F.C. de Pasto",
+      "player": "Luis Fernando Botina O. (DEL)",
+      "yellowCards": 0,
+      "redCards": 1
     }
   ]
 }

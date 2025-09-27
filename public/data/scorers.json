@@ -1,34 +1,833 @@
 {
-  "scorers": [
-    {
-      "position": 1,
-      "name": "Carlos Rodríguez",
-      "team": "Club Real Madrid de Tumaco",
-      "goals": 8
+  "teams": {
+    "club-real-madrid-de-tumaco": {
+      "name": "Club Real Madrid de Tumaco",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981411/19_alaltg.webp"
     },
-    {
-      "position": 2,
-      "name": "Miguel Ángel Torres",
-      "team": "ALDRIN F.C. Tumaco",
-      "goals": 7
+    "cd-camilo-torres-de-popayan": {
+      "name": "C.D. Camilo Torres de Popayán",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981409/7_p5prsa.webp"
     },
-    {
-      "position": 3,
-      "name": "Juan David López",
-      "team": "Calidad F.C. Pitalito",
-      "goals": 6
+    "cd-sport-center-putumayo": {
+      "name": "C.D. Sport Center Putumayo",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981410/12_cswxso.webp"
     },
-    {
-      "position": 4,
-      "name": "Andrés Felipe Muñoz",
-      "team": "C.D. Camilo Torres de Popayán",
-      "goals": 5
+    "jac-la-rioja-neiva": {
+      "name": "JAC. La Rioja Neiva",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981412/25_vvtofg.webp"
     },
-    {
-      "position": 5,
-      "name": "Daniel Santiago Pérez",
-      "team": "Real Sociedad F.C. Popayán",
-      "goals": 4
+    "cd-leon-fc-de-popayan": {
+      "name": "C.D. León F.C. de Popayán",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981409/8_b9txud.webp"
+    },
+    "aldrin-fc-tumaco": {
+      "name": "ALDRIN F.C. Tumaco",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981411/20_jvgbqz.webp"
+    },
+    "pumas-de-mocoa": {
+      "name": "A. de fútbol Pumas de Mocoa",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981409/4_twwvj7.webp"
+    },
+    "calidad-fc-pitalito": {
+      "name": "Calidad F.C. Pitalito",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981412/23_hnocuf.webp"
+    },
+    "csd-aston-huila-neiva": {
+      "name": "CSD Aston Huila de Neiva",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981412/24_hmhbqq.webp"
+    },
+    "estudiantes-fc-pasto": {
+      "name": "Estudiantes F.C. de Pasto",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981410/15_lwu36a.webp"
+    },
+    "cd-sport-cauca-popayan": {
+      "name": "C.D. Sport Cauca Popayán",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981410/11_s8pcbi.webp"
+    },
+    "tierra-talentos-puerto-asis": {
+      "name": "Tierra de Talentos Puerto Asís",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981409/1_vln1qi.webp"
+    },
+    "deportivo-caucanos-popayan": {
+      "name": "Deportivo Caucanos de Popayán",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981409/5_go5zar.webp"
+    },
+    "nuevos-talentos-orito": {
+      "name": "Club Nuevos Talentos de Orito",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981409/3_eingdb.webp"
+    },
+    "deportivo-pasto": {
+      "name": "Deportivo Pasto",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981412/21_t9dgu0.webp"
+    },
+    "promesas-fc-neiva": {
+      "name": "Promesas F.C. Neiva",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981412/22_eladpf.webp"
+    },
+    "atletico-fc-florencia": {
+      "name": "Atlético F.C. de Florencia",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981410/14_jxvkx7.webp"
+    },
+    "radi-fc-ipiales": {
+      "name": "RADI F.C. Ipiales",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981411/18_td3lzw.webp"
+    },
+    "la-plata-fc-m-la-plata": {
+      "name": "La Plata F.C.",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981410/9_g0gvcd.webp"
+    },
+    "elite-independiente-popayan": {
+      "name": "Elite Independiente Popayán",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981409/6_ifgwcx.webp"
+    },
+    "club-d-reyes-fc-de-neiva": {
+      "name": "C.D. Reyes F.C. de Neiva",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981410/10_rgdd6q.webp"
+    },
+    "sporting-caqueta": {
+      "name": "Sporting de Caquetá",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981410/13_nouisb.webp"
+    },
+    "club-eder-ruales-de-ipiales": {
+      "name": "Club Eder Rúales de Ipiales",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981411/17_vygtsu.webp"
+    },
+    "fm-futbol-la-cruz-narino": {
+      "name": "FM de fútbol La Cruz Nariño",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981410/16_ls6ddq.webp"
+    },
+    "real-sociedad-fc-popayan": {
+      "name": "Real Sociedad F.C. de Popayán",
+      "escudo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758981410/16_ls6ddq.webp"
     }
-  ]
+  },
+  "scorers": {
+    "groups": [
+      {
+        "position": 1,
+        "name": "Thomas A. Suarez O.",
+        "teamId": "club-d-reyes-fc-de-neiva",
+        "team": "C.D. Reyes F.C. de Neiva",
+        "goals": 6
+      },
+      {
+        "position": 2,
+        "name": "Alan S. Reinoso Bernal",
+        "teamId": "estudiantes-fc-pasto",
+        "team": "Estudiantes F.C. de Pasto",
+        "goals": 3
+      },
+      {
+        "position": 3,
+        "name": "Janner Andrés Angulo G.",
+        "teamId": "sporting-caqueta",
+        "team": "Sporting de Caquetá",
+        "goals": 3
+      },
+      {
+        "position": 4,
+        "name": "Thiago Perdomo Fierro",
+        "teamId": "csd-aston-huila-neiva",
+        "team": "CDS Aston Huila de Neiva",
+        "goals": 3
+      },
+      {
+        "position": 5,
+        "name": "Milán Samuel Cortes Q.",
+        "teamId": "club-real-madrid-de-tumaco",
+        "team": "Club Real Madrid de Tumaco",
+        "goals": 2
+      },
+      {
+        "position": 6,
+        "name": "Dilan Santiago Quiñonez",
+        "teamId": "cd-leon-fc-de-popayan",
+        "team": "C.D. León F.C. Popayán",
+        "goals": 2
+      },
+      {
+        "position": 7,
+        "name": "Cristian Felipe Guancha G.",
+        "teamId": "estudiantes-fc-pasto",
+        "team": "Estudiantes F.C. de Pasto",
+        "goals": 2
+      },
+      {
+        "position": 8,
+        "name": "Emanuel Fernando M.",
+        "teamId": "cd-sport-cauca-popayan",
+        "team": "Club Deportivo Sport Cauca",
+        "goals": 2
+      },
+      {
+        "position": 9,
+        "name": "Miguel Ángel Piñeros C.",
+        "teamId": "sporting-caqueta",
+        "team": "Sporting de Caquetá",
+        "goals": 2
+      },
+      {
+        "position": 10,
+        "name": "Sebastián Sandoval G.",
+        "teamId": "atletico-fc-florencia",
+        "team": "Atlético F.C. de Florencia",
+        "goals": 2
+      },
+      {
+        "position": 11,
+        "name": "Daniel Mateo Silva P.",
+        "teamId": "atletico-fc-florencia",
+        "team": "Atlético F.C. de Florencia",
+        "goals": 2
+      },
+      {
+        "position": 12,
+        "name": "Diego Fernando Acosta O.",
+        "teamId": "cd-camilo-torres-de-popayan",
+        "team": "C.D. Camilo Torres de Popayán",
+        "goals": 2
+      },
+      {
+        "position": 13,
+        "name": "Juan Esteban Collazos I.",
+        "teamId": "cd-camilo-torres-de-popayan",
+        "team": "C.D. Camilo Torres de Popayán",
+        "goals": 2
+      },
+      {
+        "position": 14,
+        "name": "Maicol Fabian Angulo M.",
+        "teamId": "deportivo-caucanos-popayan",
+        "team": "Deportivo Caucanos de Popayán",
+        "goals": 2
+      },
+      {
+        "position": 15,
+        "name": "Aaron T. Tovar Polania",
+        "teamId": "club-d-reyes-fc-de-neiva",
+        "team": "C.D. Reyes F.C. de Neiva",
+        "goals": 1
+      },
+      {
+        "position": 16,
+        "name": "David Luis Gómez Cutiva",
+        "teamId": "club-d-reyes-fc-de-neiva",
+        "team": "C.D. Reyes F.C. de Neiva",
+        "goals": 1
+      },
+      {
+        "position": 17,
+        "name": "Dorlan Emanuel Imbachi M.",
+        "teamId": "real-sociedad-fc-popayan",
+        "team": "Real Sociedad F.C. de Popayán",
+        "goals": 1
+      },
+      {
+        "position": 18,
+        "name": "Jaider Estiven Valencia R.",
+        "teamId": "club-real-madrid-de-tumaco",
+        "team": "Club Real Madrid de Tumaco",
+        "goals": 1
+      },
+      {
+        "position": 19,
+        "name": "Dilan Jair Caicedo Segura",
+        "teamId": "club-real-madrid-de-tumaco",
+        "team": "Club Real Madrid de Tumaco",
+        "goals": 1
+      },
+      {
+        "position": 20,
+        "name": "José Matías Sevillano C.",
+        "teamId": "club-real-madrid-de-tumaco",
+        "team": "Club Real Madrid de Tumaco",
+        "goals": 1
+      },
+      {
+        "position": 21,
+        "name": "Samuel Camilo Raigosa P.",
+        "teamId": "deportivo-caucanos-popayan",
+        "team": "Deportivo Caucanos de Popayán",
+        "goals": 1
+      },
+      {
+        "position": 22,
+        "name": "Matías Muñoz Ávila",
+        "teamId": "deportivo-caucanos-popayan",
+        "team": "Deportivo Caucanos de Popayán",
+        "goals": 1
+      },
+      {
+        "position": 23,
+        "name": "Samuel Fernández J.",
+        "teamId": "deportivo-caucanos-popayan",
+        "team": "Deportivo Caucanos de Popayán",
+        "goals": 1
+      },
+      {
+        "position": 24,
+        "name": "Samuel A. Burbano C.",
+        "teamId": "nuevos-talentos-orito",
+        "team": "Club Nuevos Talentos de Orito",
+        "goals": 1
+      },
+      {
+        "position": 25,
+        "name": "Jhoan Esteven García V.",
+        "teamId": "nuevos-talentos-orito",
+        "team": "Club Nuevos Talentos de Orito",
+        "goals": 1
+      },
+      {
+        "position": 26,
+        "name": "Jhoner A. Cabezas Díaz",
+        "teamId": "nuevos-talentos-orito",
+        "team": "Club Nuevos Talentos de Orito",
+        "goals": 1
+      },
+      {
+        "position": 27,
+        "name": "Yordy Sebastián Ojeda C.",
+        "teamId": "pumas-de-mocoa",
+        "team": "A. de fútbol Pumas de Mocoa",
+        "goals": 1
+      },
+      {
+        "position": 28,
+        "name": "Juan José Villarreal Burgos",
+        "teamId": "pumas-de-mocoa",
+        "team": "A. de fútbol Pumas de Mocoa",
+        "goals": 1
+      },
+      {
+        "position": 29,
+        "name": "Samir A. Andrade A.",
+        "teamId": "pumas-de-mocoa",
+        "team": "A. de fútbol Pumas de Mocoa",
+        "goals": 1
+      },
+      {
+        "position": 30,
+        "name": "Juan José Pérez Forero",
+        "teamId": "atletico-fc-florencia",
+        "team": "Atlético F.C. de Florencia",
+        "goals": 1
+      },
+      {
+        "position": 31,
+        "name": "Juan Sebastián Berna M.",
+        "teamId": "atletico-fc-florencia",
+        "team": "Atlético F.C. de Florencia",
+        "goals": 1
+      },
+      {
+        "position": 32,
+        "name": "Deymer A. Romero S.",
+        "teamId": "atletico-fc-florencia",
+        "team": "Atlético F.C. de Florencia",
+        "goals": 1
+      },
+      {
+        "position": 33,
+        "name": "Sergio Mario Joven S.",
+        "teamId": "sporting-caqueta",
+        "team": "Sporting de Caquetá",
+        "goals": 1
+      },
+      {
+        "position": 34,
+        "name": "Breidy Alejandro Muñoz F.",
+        "teamId": "elite-independiente-popayan",
+        "team": "Elite Independiente Popayán",
+        "goals": 1
+      },
+      {
+        "position": 35,
+        "name": "Cesar David Castillo M.",
+        "teamId": "club-eder-ruales-de-ipiales",
+        "team": "Club Eder Rúales de Ipiales",
+        "goals": 1
+      },
+      {
+        "position": 36,
+        "name": "Alexis Stiven Hurtado S.",
+        "teamId": "club-eder-ruales-de-ipiales",
+        "team": "Club Eder Rúales de Ipiales",
+        "goals": 1
+      },
+      {
+        "position": 37,
+        "name": "Juan Camilo Flores C.",
+        "teamId": "club-eder-ruales-de-ipiales",
+        "team": "Club Eder Rúales de Ipiales",
+        "goals": 1
+      },
+      {
+        "position": 38,
+        "name": "Maicol Stiven Villota Acosta",
+        "teamId": "estudiantes-fc-pasto",
+        "team": "Estudiantes F.C. de Pasto",
+        "goals": 1
+      },
+      {
+        "position": 39,
+        "name": "Jhonatan Camilo Rodríguez",
+        "teamId": "estudiantes-fc-pasto",
+        "team": "Estudiantes F.C. de Pasto",
+        "goals": 1
+      },
+      {
+        "position": 40,
+        "name": "Jerónimo Arcos Garces",
+        "teamId": "estudiantes-fc-pasto",
+        "team": "Estudiantes F.C. de Pasto",
+        "goals": 1
+      },
+      {
+        "position": 41,
+        "name": "Xavi Jocsan Oviedo E.",
+        "teamId": "radi-fc-ipiales",
+        "team": "RADI F.C. Ipiales",
+        "goals": 1
+      },
+      {
+        "position": 42,
+        "name": "Kevin A. Valderrama P.",
+        "teamId": "jac-la-rioja-neiva",
+        "team": "JAC. La Rioja Neiva",
+        "goals": 1
+      },
+      {
+        "position": 43,
+        "name": "Juan José Males Jiménez",
+        "teamId": "jac-la-rioja-neiva",
+        "team": "JAC. La Rioja Neiva",
+        "goals": 1
+      },
+      {
+        "position": 44,
+        "name": "Thiago A. Gutiérrez Ruiz",
+        "teamId": "cd-camilo-torres-de-popayan",
+        "team": "C.D. Camilo Torres de Popayán",
+        "goals": 1
+      },
+      {
+        "position": 45,
+        "name": "Juan Camilo Tapia Muñoz",
+        "teamId": "cd-leon-fc-de-popayan",
+        "team": "C.D. León F.C. Popayán",
+        "goals": 1
+      },
+      {
+        "position": 46,
+        "name": "Darwin Córdoba Riascos",
+        "teamId": "cd-leon-fc-de-popayan",
+        "team": "C.D. León F.C. Popayán",
+        "goals": 1
+      }
+    ],
+    "octavos": [
+      {
+        "position": 1,
+        "name": "Thomas A. Suarez O.",
+        "teamId": "club-d-reyes-fc-de-neiva",
+        "team": "C.D. Reyes F.C. de Neiva",
+        "goals": 6
+      },
+      {
+        "position": 2,
+        "name": "Alan S. Reinoso Bernal",
+        "teamId": "estudiantes-fc-pasto",
+        "team": "Estudiantes F.C. de Pasto",
+        "goals": 4
+      },
+      {
+        "position": 3,
+        "name": "Thiago Perdomo Fierro",
+        "teamId": "csd-aston-huila-neiva",
+        "team": "CDS Aston Huila de Neiva",
+        "goals": 3
+      },
+      {
+        "position": 4,
+        "name": "Janner Andrés Angulo G.",
+        "teamId": "sporting-caqueta",
+        "team": "Sporting de Caquetá",
+        "goals": 3
+      },
+      {
+        "position": 5,
+        "name": "Jhoner A. Cabezas Díaz",
+        "teamId": "nuevos-talentos-orito",
+        "team": "Club Nuevos Talentos de Orito",
+        "goals": 3
+      },
+      {
+        "position": 6,
+        "name": "Dylan Camilo Acosta M.",
+        "teamId": "pumas-de-mocoa",
+        "team": "A. de Fútbol Pumas de Mocoa",
+        "goals": 3
+      },
+      {
+        "position": 7,
+        "name": "Milán Samuel Cortes Q.",
+        "teamId": "club-real-madrid-de-tumaco",
+        "team": "Club Real Madrid de Tumaco",
+        "goals": 2
+      },
+      {
+        "position": 8,
+        "name": "Cristian Felipe Guancha G.",
+        "teamId": "estudiantes-fc-pasto",
+        "team": "Estudiantes F.C. de Pasto",
+        "goals": 2
+      },
+      {
+        "position": 9,
+        "name": "Emanuel Fernando M.",
+        "teamId": "cd-sport-cauca-popayan",
+        "team": "Club Deportivo Sport Cauca",
+        "goals": 2
+      },
+      {
+        "position": 10,
+        "name": "Miguel Ángel Piñeros C.",
+        "teamId": "sporting-caqueta",
+        "team": "Sporting de Caquetá",
+        "goals": 2
+      },
+      {
+        "position": 11,
+        "name": "Sebastián Sandoval G.",
+        "teamId": "atletico-fc-florencia",
+        "team": "Atlético F.C. de Florencia",
+        "goals": 2
+      },
+      {
+        "position": 12,
+        "name": "Daniel Mateo Silva P.",
+        "teamId": "atletico-fc-florencia",
+        "team": "Atlético F.C. de Florencia",
+        "goals": 2
+      },
+      {
+        "position": 13,
+        "name": "Maicol Fabian Angulo M.",
+        "teamId": "deportivo-caucanos-popayan",
+        "team": "Deportivo Caucanos de Popayán",
+        "goals": 2
+      },
+      {
+        "position": 14,
+        "name": "Samuel A. Burbano C.",
+        "teamId": "nuevos-talentos-orito",
+        "team": "Club Nuevos Talentos de Orito",
+        "goals": 2
+      },
+      {
+        "position": 15,
+        "name": "Yeisson Esteban Rodríguez",
+        "teamId": "csd-aston-huila-neiva",
+        "team": "CDS Aston Huila de Neiva",
+        "goals": 2
+      },
+      {
+        "position": 16,
+        "name": "Aaron T. Tovar Polania",
+        "teamId": "club-d-reyes-fc-de-neiva",
+        "team": "C.D. Reyes F.C. de Neiva",
+        "goals": 1
+      },
+      {
+        "position": 17,
+        "name": "David Luis Gómez Cutiva",
+        "teamId": "club-d-reyes-fc-de-neiva",
+        "team": "C.D. Reyes F.C. de Neiva",
+        "goals": 1
+      },
+      {
+        "position": 18,
+        "name": "Dorlan Emanuel Imbachi M.",
+        "teamId": "real-sociedad-fc-popayan",
+        "team": "Real Sociedad F.C. de Popayán",
+        "goals": 1
+      },
+      {
+        "position": 19,
+        "name": "Jaider Estiven Valencia R.",
+        "teamId": "club-real-madrid-de-tumaco",
+        "team": "Club Real Madrid de Tumaco",
+        "goals": 1
+      },
+      {
+        "position": 20,
+        "name": "Dilan Jair Caicedo Segura",
+        "teamId": "club-real-madrid-de-tumaco",
+        "team": "Club Real Madrid de Tumaco",
+        "goals": 1
+      },
+      {
+        "position": 21,
+        "name": "José Matías Sevillano C.",
+        "teamId": "club-real-madrid-de-tumaco",
+        "team": "Club Real Madrid de Tumaco",
+        "goals": 1
+      },
+      {
+        "position": 22,
+        "name": "Samuel Camilo Raigosa P.",
+        "teamId": "deportivo-caucanos-popayan",
+        "team": "Deportivo Caucanos de Popayán",
+        "goals": 1
+      },
+      {
+        "position": 23,
+        "name": "Matías Muñoz Ávila",
+        "teamId": "deportivo-caucanos-popayan",
+        "team": "Deportivo Caucanos de Popayán",
+        "goals": 1
+      },
+      {
+        "position": 24,
+        "name": "Samuel Fernández J.",
+        "teamId": "deportivo-caucanos-popayan",
+        "team": "Deportivo Caucanos de Popayán",
+        "goals": 1
+      },
+      {
+        "position": 25,
+        "name": "Jhoan Esteven García V.",
+        "teamId": "nuevos-talentos-orito",
+        "team": "Club Nuevos Talentos de Orito",
+        "goals": 1
+      },
+      {
+        "position": 26,
+        "name": "Yordy Sebastián Ojeda C.",
+        "teamId": "pumas-de-mocoa",
+        "team": "A. de Fútbol Pumas de Mocoa",
+        "goals": 1
+      },
+      {
+        "position": 27,
+        "name": "Juan José Villarreal Burgos",
+        "teamId": "pumas-de-mocoa",
+        "team": "A. de Fútbol Pumas de Mocoa",
+        "goals": 1
+      },
+      {
+        "position": 28,
+        "name": "Samir A. Andrade A.",
+        "teamId": "pumas-de-mocoa",
+        "team": "A. de Fútbol Pumas de Mocoa",
+        "goals": 1
+      },
+      {
+        "position": 29,
+        "name": "Juan José Pérez Forero",
+        "teamId": "atletico-fc-florencia",
+        "team": "Atlético F.C. de Florencia",
+        "goals": 1
+      },
+      {
+        "position": 30,
+        "name": "Juan Sebastián Berna M.",
+        "teamId": "atletico-fc-florencia",
+        "team": "Atlético F.C. de Florencia",
+        "goals": 1
+      },
+      {
+        "position": 31,
+        "name": "Deymer A. Romero S.",
+        "teamId": "atletico-fc-florencia",
+        "team": "Atlético F.C. de Florencia",
+        "goals": 1
+      },
+      {
+        "position": 32,
+        "name": "Sergio Mario Joven S.",
+        "teamId": "sporting-caqueta",
+        "team": "Sporting de Caquetá",
+        "goals": 1
+      },
+      {
+        "position": 33,
+        "name": "Diego A. Córdoba A.",
+        "teamId": "sporting-caqueta",
+        "team": "Sporting de Caquetá",
+        "goals": 1
+      },
+      {
+        "position": 34,
+        "name": "Luis Alejandro Trujillo O.",
+        "teamId": "sporting-caqueta",
+        "team": "Sporting de Caquetá",
+        "goals": 1
+      },
+      {
+        "position": 35,
+        "name": "Breidy Alejandro Muñoz F.",
+        "teamId": "elite-independiente-popayan",
+        "team": "Elite Independiente Popayán",
+        "goals": 1
+      },
+      {
+        "position": 36,
+        "name": "Maicol Stiven Villota Acosta",
+        "teamId": "estudiantes-fc-pasto",
+        "team": "Estudiantes F.C. de Pasto",
+        "goals": 1
+      },
+      {
+        "position": 37,
+        "name": "Jhonatan Camilo Rodríguez",
+        "teamId": "estudiantes-fc-pasto",
+        "team": "Estudiantes F.C. de Pasto",
+        "goals": 1
+      },
+      {
+        "position": 38,
+        "name": "Jerónimo Arcos Garces",
+        "teamId": "estudiantes-fc-pasto",
+        "team": "Estudiantes F.C. de Pasto",
+        "goals": 1
+      }
+    ],
+    "cuartos": [
+      {
+        "position": 1,
+        "name": "Thomas A. Suarez O.",
+        "teamId": "club-d-reyes-fc-de-neiva",
+        "team": "C.D. Reyes F.C. de Neiva",
+        "goals": 6
+      },
+      {
+        "position": 2,
+        "name": "Alan S. Reinoso Bernal",
+        "teamId": "estudiantes-fc-pasto",
+        "team": "Estudiantes F.C. de Pasto",
+        "goals": 5
+      },
+      {
+        "position": 3,
+        "name": "Janner Andrés Angulo G.",
+        "teamId": "sporting-caqueta",
+        "team": "Sporting de Caquetá",
+        "goals": 5
+      },
+      {
+        "position": 4,
+        "name": "Yeisson Esteban Rodríguez",
+        "teamId": "csd-aston-huila-neiva",
+        "team": "CDS Aston Huila de Neiva",
+        "goals": 4
+      },
+      {
+        "position": 5,
+        "name": "Thiago Perdomo Fierro",
+        "teamId": "csd-aston-huila-neiva",
+        "team": "CDS Aston Huila de Neiva",
+        "goals": 3
+      },
+      {
+        "position": 6,
+        "name": "Miguel Ángel Piñeros C.",
+        "teamId": "sporting-caqueta",
+        "team": "Sporting de Caquetá",
+        "goals": 3
+      },
+      {
+        "position": 7,
+        "name": "Cristian Felipe Guancha G.",
+        "teamId": "estudiantes-fc-pasto",
+        "team": "Estudiantes F.C. de Pasto",
+        "goals": 2
+      },
+      {
+        "position": 8,
+        "name": "Jhonatan Camilo Rodríguez",
+        "teamId": "estudiantes-fc-pasto",
+        "team": "Estudiantes F.C. de Pasto",
+        "goals": 2
+      },
+      {
+        "position": 9,
+        "name": "Maicol Fabian Angulo M.",
+        "teamId": "deportivo-caucanos-popayan",
+        "team": "Deportivo Caucanos de Popayán",
+        "goals": 2
+      },
+      {
+        "position": 10,
+        "name": "Samuel Cárdenas S.",
+        "teamId": "csd-aston-huila-neiva",
+        "team": "CDS Aston Huila de Neiva",
+        "goals": 1
+      },
+      {
+        "position": 11,
+        "name": "Samuel Camilo Raigosa P.",
+        "teamId": "deportivo-caucanos-popayan",
+        "team": "Deportivo Caucanos de Popayán",
+        "goals": 1
+      },
+      {
+        "position": 12,
+        "name": "Matías Muñoz Ávila",
+        "teamId": "deportivo-caucanos-popayan",
+        "team": "Deportivo Caucanos de Popayán",
+        "goals": 1
+      },
+      {
+        "position": 13,
+        "name": "Samuel Fernández J.",
+        "teamId": "deportivo-caucanos-popayan",
+        "team": "Deportivo Caucanos de Popayán",
+        "goals": 1
+      },
+      {
+        "position": 14,
+        "name": "Sergio Mario Joven S.",
+        "teamId": "sporting-caqueta",
+        "team": "Sporting de Caquetá",
+        "goals": 1
+      },
+      {
+        "position": 15,
+        "name": "Diego A. Córdoba A.",
+        "teamId": "sporting-caqueta",
+        "team": "Sporting de Caquetá",
+        "goals": 1
+      },
+      {
+        "position": 16,
+        "name": "Luis Alejandro Trujillo O.",
+        "teamId": "sporting-caqueta",
+        "team": "Sporting de Caquetá",
+        "goals": 1
+      },
+      {
+        "position": 17,
+        "name": "Maicol Stiven Villota Acosta",
+        "teamId": "estudiantes-fc-pasto",
+        "team": "Estudiantes F.C. de Pasto",
+        "goals": 1
+      },
+      {
+        "position": 18,
+        "name": "Samuel David Gutiérrez P.",
+        "teamId": null,
+        "team": "Estudiantes F.C. de Pasto",
+        "goals": 1
+      },
+      {
+        "position": 19,
+        "name": "Jerónimo Arcos Garces",
+        "teamId": "estudiantes-fc-pasto",
+        "team": "Estudiantes F.C. de Pasto",
+        "goals": 1
+      }
+    ]
+  }
 }

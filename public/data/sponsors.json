@@ -2,51 +2,51 @@
   "sponsors": [
     {
       "name": "Colanta",
-      "logo": "https://images.pexels.com/photos/1556691/pexels-photo-1556691.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop",
-      "url": "https://colanta.com.co",
+      "logo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758988829/colanta_mrqft5.webp",
+      "url": "https://colanta.com/sabe-mas/",
       "category": "Patrocinador Principal"
     },
     {
       "name": "Festival de Festivales",
-      "logo": "https://images.pexels.com/photos/1264210/pexels-photo-1264210.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop",
+      "logo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758988829/logo_festival_1_l4r9ul.webp",
       "url": "#",
       "category": "Patrocinador Principal"
     },
     {
       "name": "Alcaldía de La Cruz",
-      "logo": "https://images.pexels.com/photos/1367278/pexels-photo-1367278.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop",
+      "logo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758988829/4_napxws.webp",
       "url": "#",
-      "category": "Institucional"
+      "category": "Patrocinador Principal"
     },
     {
       "name": "Gobernación de Nariño",
-      "logo": "https://images.pexels.com/photos/1556796/pexels-photo-1556796.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop",
+      "logo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758988829/6_y7aj0o.webp",
       "url": "#",
-      "category": "Institucional"
+      "category": "Patrocinador Principal"
     },
     {
       "name": "Corporación Deportiva Los Paisitas",
-      "logo": "https://images.pexels.com/photos/1556706/pexels-photo-1556706.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop",
+      "logo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758988830/logo_festival_02_g5hrsq.webp",
       "url": "#",
-      "category": "Deportivo"
+      "category": "Patrocinador Principal"
     },
     {
       "name": "Liga de Fútbol de Nariño",
-      "logo": "https://images.pexels.com/photos/1556713/pexels-photo-1556713.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop",
+      "logo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758988829/banner_fbMesa_de_trabajo_7_mox9vv.webp",
       "url": "#",
-      "category": "Deportivo"
+      "category": "Patrocinador Principal"
     },
     {
       "name": "OSBOL Sport Marketing",
-      "logo": "https://images.pexels.com/photos/1556720/pexels-photo-1556720.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop",
+      "logo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758988830/Osbol_1_exftex.webp",
       "url": "#",
-      "category": "Deportivo"
+      "category": "Patrocinador Principal"
     },
     {
       "name": "Fortaleza Deportes",
-      "logo": "https://images.pexels.com/photos/1556725/pexels-photo-1556725.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop",
+      "logo": "https://res.cloudinary.com/ddmutduxp/image/upload/v1758988829/Dise%C3%B1o_sin_t%C3%ADtulo_2_q2i7o2.webp",
       "url": "#",
-      "category": "Deportivo"
+      "category": "Patrocinador Principal"
     }
   ]
 }
